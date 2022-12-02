@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 0x00. Linear Algebra
 
 ## Learning Objectives
@@ -16,3 +17,6 @@
 12. What is Numpy?
 13. What is parallelization and why is it important?
 14. What is broadcasting?
+=======
+# Lineal Algebra
+>>>>>>> f5efd89f9fe65ad2cae66b8d8cd4222145de68d2
