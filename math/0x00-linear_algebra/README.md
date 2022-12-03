@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # 0x00. Linear Algebra
 
 ## Learning Objectives
