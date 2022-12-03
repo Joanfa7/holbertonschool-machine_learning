@@ -6,7 +6,7 @@ def add_arrays(arr1, arr2):
     """ Funciton that evaluates if the arrays are the same
     lengh if they are prossed to add theri elements"""
     if len(arr1) != len(arr2) and len(arr2) != len(arr1):
-        return [None]
+        return None
     else:
         new_array = []
         for idx in range(0, len(arr1)):
