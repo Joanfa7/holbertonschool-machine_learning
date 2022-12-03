@@ -9,8 +9,8 @@ def add_matrices2D(mat1, mat2):
     else:
         res = []
         for i in range(len(mat1)):
-            row= []
+            row = []
             for j in range(len(mat1[0])):
-                row.append(mat1[i][j]+mat2[i][j])
+                row.append(mat1[i][j] + mat2[i][j])
             res.append(row)
         return res
