@@ -3,7 +3,8 @@
 
 
 def add_arrays(arr1, arr2):
-    """ Funciton that evaluates if the arrays are the same lengh if they are prossed to add theri elements"""
+    """ Funciton that evaluates if the arrays are the same
+    lengh if they are prossed to add theri elements"""
     if len(arr1) != len(arr2):
         return [None]
     else:
