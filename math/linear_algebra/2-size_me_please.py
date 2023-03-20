@@ -3,8 +3,7 @@
 
 
 def matrix_shape(matrix):
-    
-    matrix_lenth = len(matrix);
-
-    for idx in range(matrix_lenth):
-        return matrix_lenth[idx][0]
+    row = len(matrix)
+    col = len(matrix[0])
+    shape = [row, col]
+    return(shape)
