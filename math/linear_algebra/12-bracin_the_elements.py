@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" performs elemetn-wise addition, subtraciton, multiplication, 
+""" performs elemetn-wise addition, subtraciton, multiplication,
     and division"""
 
 
