@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""  function def np_matmul(mat1, mat2): that performs matrix multiplication:"""
+"""  function that performs matrix multiplication:"""
 import numpy as np
 
 
