@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-""" performs elemetn-wise addition, subtraciton, multiplication, and division"""
+""" performs elemetn-wise addition, subtraciton, multiplication, 
+    and division"""
 
 
 def np_elementwise(mat1, mat2):
