@@ -7,8 +7,7 @@ def poly_derivative(poly):
     if not isinstance(poly, list):
         return None
     derivative = [poly[i] * i for i in range(1, len(poly))]
-    if derivative == 0:
-        zero_value = int(bool(derivative))
-        return zero_value
+    if derivative == [0]:
+        return derivative
     else:
         return derivative
