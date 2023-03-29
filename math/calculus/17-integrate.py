@@ -8,7 +8,7 @@ def poly_integral(poly, C=0):
     if not isinstance(poly, list) or not isinstance(C, int):
         return None
     elif len(poly) == 1:
-        return [0]
+        return [C, poly[0]]
     elif len(poly) == 0:
         return None
     else:
