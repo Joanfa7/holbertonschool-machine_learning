@@ -11,4 +11,5 @@ def poly_integral(poly, C=0):
         return None
     else:
         integral = [C] + [poly[i] / (i + 1) for i in range(len(poly))]
-        return integral
+        rounded_integral = [round(i, 2) for i in integral]
+        return rounded_integral
