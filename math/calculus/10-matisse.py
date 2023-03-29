@@ -8,6 +8,6 @@ def poly_derivative(poly):
         return None
     derivative = [poly[i] * i for i in range(1, len(poly))]
     if derivative == 0:
-        return [0]
+        return '[0]'
     else:
         return derivative
