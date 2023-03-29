@@ -9,8 +9,10 @@ def poly_integral(poly, C=0):
         return None
     elif poly == [0]:
         return [C]
+    elif len(poly) == 0:
+        return None
     elif len(poly) == 1:
-        return [C, poly]
+        return [C, poly[0]]
     else:
         integral = [C] + [poly[i] / (i + 1) for i in range(len(poly))]
         rounded_integral = [round(i, 2) for i in integral]
