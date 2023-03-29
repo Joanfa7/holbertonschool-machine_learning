@@ -7,7 +7,7 @@ def poly_integral(poly, C=0):
     """Function that calculates de integral of a polynomial"""
     if not isinstance(poly, list) or not isinstance(C, int):
         return None
-    elif len(poly) == [0]:
+    elif poly == [0]:
         return [0] 
     elif len(poly) == 1:
         return [C, poly[0]]
