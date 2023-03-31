@@ -87,5 +87,4 @@
    In the context of Machine Learning, definite integrals are used in a verienty of application, such as calculating the expected values of a continuous random variable or the probability density function of a distribution. They are also used in optimization algorithms, suc as the calculation of the loss funciton in training machine learning models.
 
 10. What is a double integral?
-
-A double integral is a typo of integral in calculus that calculates teh volume under a surface in three-dimensional space. It involves integrating a funciton of two variables over a regino in the plane. The result of a double integralis a single number that represents the valume under a surface. In the context of Machine Learning, double integrals are used in some optimization algorithms and in probability theroy the calculate joint porbabilites of two continuous random vairables.
+    A double integral is a typo of integral in calculus that calculates teh volume under a surface in three-dimensional space. It involves integrating a funciton of two variables over a regino in the plane. The result of a double integralis a single number that represents the valume under a surface. In the context of Machine Learning, double integrals are used in some optimization algorithms and in probability theroy the calculate joint porbabilites of two continuous random vairables.
