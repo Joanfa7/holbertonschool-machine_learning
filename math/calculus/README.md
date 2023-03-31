@@ -1,4 +1,6 @@
-# 0x02. Calculus
+# Calculus
+
+![calculus](https://www.mlq.ai/content/images/2019/08/mathematics-of-machine-learning-multivariate-calculus.png)
 
 ## Learning Objectives
 
@@ -36,7 +38,7 @@
 
 5. What is the product rule and how is applied to Machine Learning?
 
-   - The porudct rule is a funcitonal rule of differentional in calculus that allows you to find the derivative of porudct of two funcitons. Specifically, if you have two funciton f(x) and g(x), the product rule states that the derivative of their product, denoted as (f(x) \* g(x)), is given by:
+   The porudct rule is a funcitonal rule of differentional in calculus that allows you to find the derivative of porudct of two funcitons. Specifically, if you have two funciton f(x) and g(x), the product rule states that the derivative of their product, denoted as (f(x) \* g(x)), is given by:
 
    (f(x) _ g(x))' = f'(x) _ g(x) + f(x) \* g'(x)
 
@@ -44,11 +46,11 @@
 
 6. What is tha chain rule?
 
-   - The cain rule is another fundamental rule of differentiation in calculus that allows you to find the derivatice of a composition of two funcitons. Specifically, if you have two functions f(x) and g(x), where g(x) is a function of f(x), the chain rule states that the derivatice of their composition, denoted as g(f(x)), is given by:
+   The cain rule is another fundamental rule of differentiation in calculus that allows you to find the derivatice of a composition of two funcitons. Specifically, if you have two functions f(x) and g(x), where g(x) is a function of f(x), the chain rule states that the derivatice of their composition, denoted as g(f(x)), is given by:
 
    (g(f(x)))' = g'(f(x)) \* f'(x)
 
-   - In other words, you first find the derivative of the outpu function (g) with respect to its input (f(x)), and then mulply it by the derivative of the inner funciton (f) wiht repsect to its input (x).
+   In other words, you first find the derivative of the outpu function (g) with respect to its input (f(x)), and then mulply it by the derivative of the inner funciton (f) wiht repsect to its input (x).
 
    In the contex of ML, the chain rule is used extensively in backpropagation, which is the algorithm used to train neural networks. In backpropagation, the chain rule is used to calculate the gradiants of the loss function with respect to the weights of the network. Specifically, the gradient of the loss function with repsect ot the weith of a particular layer can be calculated by chaining toheter the graients of the loss function with respect to the outputs of the layer of the gradiants of the outputs wiht repsect to the inputs, using the chain rule.
 
@@ -68,7 +70,7 @@
 
 8. What is an indefinite integral?
 
-   - An idenfinite integral is teh opposite of a derivative, and is also known as an anitderivative. Secifically, given a funciton f(x), an indefinite integral of f(x) is another function F(x) such that the derivatice of F(x) wiht respect to x is equal to f(x). In other words, F(x) is a function whose derivative is f(x).
+   An idenfinite integral is teh opposite of a derivative, and is also known as an anitderivative. Secifically, given a funciton f(x), an indefinite integral of f(x) is another function F(x) such that the derivatice of F(x) wiht respect to x is equal to f(x). In other words, F(x) is a function whose derivative is f(x).
 
    Mathmatically, we represent the indefinite integral of f(x) as:
 
@@ -78,7 +80,7 @@
 
 9. What is a definite itegral?
 
-   - Is a mathematical operation that calculates the area under a curve between two points and the x-axis. Specifically, given a funciton f(x) we can calculate the definite integral of f(x) over the interval [a, b] as:
+   Is a mathematical operation that calculates the area under a curve between two points and the x-axis. Specifically, given a funciton f(x) we can calculate the definite integral of f(x) over the interval [a, b] as:
 
    ∫(from a to b) f(x) dx
 
@@ -86,6 +88,4 @@
 
 10. What is a double integral?
 
-- A double integral is a typo of integral in calculus that calculates teh volume under a surface in three-dimensional space. It involves integrating a funciton of two variables over a regino in the plane. The result of a double integralis a single number that represents the valume under a surface. In the context of Machine Learning, double integrals are used in some optimization algorithms and in probability theroy the calculate joint porbabilites of two continuous random vairables.
-
-![calculus](https://www.mlq.ai/content/images/2019/08/mathematics-of-machine-learning-multivariate-calculus.png)
+A double integral is a typo of integral in calculus that calculates teh volume under a surface in three-dimensional space. It involves integrating a funciton of two variables over a regino in the plane. The result of a double integralis a single number that represents the valume under a surface. In the context of Machine Learning, double integrals are used in some optimization algorithms and in probability theroy the calculate joint porbabilites of two continuous random vairables.
