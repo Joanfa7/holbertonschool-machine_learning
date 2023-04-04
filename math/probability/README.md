@@ -1,6 +1,6 @@
 # Probability
 
-<img src="./probability-formula-cheat-sheet-1.png" alt="Alt text" title="Probability image">
+<img src="./images/probability-formula-cheat-sheet-1.png" alt="Alt text" title="Probability image">
 
 ## Learning Objective
 
