@@ -35,7 +35,7 @@
 
      P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
 
-   This rule takes into account the posibility of A nad B overlapping, so it subrtacts the interseciton to avoid double-counting. In ML, the general rule is useful when combining probabilities of multiple events or predictions, such as in enseble methos or multi-class classificaiton problems.
+     This rule takes into account the posibility of A nad B overlapping, so it subrtacts the interseciton to avoid double-counting. In ML, the general rule is useful when combining probabilities of multiple events or predictions, such as in enseble methos or multi-class classificaiton problems.
 
 6. What is a probability distribution?
 
