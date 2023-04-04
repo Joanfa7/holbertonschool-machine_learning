@@ -1,6 +1,6 @@
 # Probability
 
-<img src="/home/joanfa95/Holberton_Repos/holbertonschool-machine_learning/math/probability" alt="Alt text" title="Probability image">
+<img src="./probability-formula-cheat-sheet-1.png" alt="Alt text" title="Probability image">
 
 ## Learning Objective
 
