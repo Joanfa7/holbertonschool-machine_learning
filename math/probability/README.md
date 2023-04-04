@@ -49,9 +49,11 @@
 
     - Probability distribution is a funciton that describes the likhood of diffretn outcomes or events in an experiment or random preocess. It assigns a probability to each possible outcome, with the sum of all probabilities equal to 1.
 
-      There are whto type of probability distributions: 1. Discrete Probability Distribution: Deals with discrete outcomes or events, such as the number of heads in a coin toss.
+      There are two type of probability distributions:
 
-            2. Continuous Probability Distribution: Deals wiht continuous outcomes or evnets, sucha s the height of a peerson or the weight of an object.
+      1. Discrete Probability Distribution: Deals with discrete outcomes or events, such as the number of heads in a coin toss.
+
+      2. Continuous Probability Distribution: Deals wiht continuous outcomes or evnets, sucha s the height of a peerson or the weight of an object.
 
       In ML, probability distributions play a critical role in modeling uncertainties, estimating parameters, and making predicitons. They are used in various algorithms, such as Bayesian inference, probabilistic graph8ical models, and generative moderls like GANs.
 
