@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 '''Create a binomial distribution'''
 
+
 class Binomial:
     '''Create a binomial distribution'''
+
     def __init__(self, data=None, n=1, p=0.5):
         '''Class constructor'''
         if data is None:
