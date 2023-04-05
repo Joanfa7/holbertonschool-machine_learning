@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """ Poisson distribution class """
 
+
 class Poisson:
+    """ Poisson distribution class"""
+
     def __init__(self, data=None, lambtha=1.):
-        """ Constructor 
+        """ Constructor
             data: list of the data to be used to estimate the distribution
             lambtha: expected number of occurences in a given time frame
         """
@@ -12,7 +15,7 @@ class Poisson:
                 raise ValueError("lambtha must be a positive value")
             self.lambtha = float(lambtha)
         else:
-            if type(data) is not list:
+            if not isinstance(data, list):
                 raise TypeError("data must be a list")
             if len(data) <= 2:
                 raise ValueError("data must contain multiple values")
