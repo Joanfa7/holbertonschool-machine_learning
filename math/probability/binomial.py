@@ -21,3 +21,11 @@ class Binomial:
                 raise ValueError('data must contain multiple values')
             self.n = len(data)
             self.p = sum(data) / len(data)
+
+    def pmf(self, k):
+        '''Calculates the value of the PMF for a given number of successes'''
+        if k < 0:
+            return 0
+        return (self.factorial(self.n) / (self.factorial(k) *
+                                          self.factorial(self.n - k))) *\
+            (self.p ** k) * ((1 - self.p) ** (self.n - k))
