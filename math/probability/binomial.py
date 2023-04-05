@@ -24,7 +24,6 @@ class Binomial:
             self.p = 1 - variance / mean
             self.n = round(mean / self.p)
             self.p = mean / self.n
-            
 
     def pmf(self, k):
         '''Calculates the value of the PMF for a given number of successes'''
