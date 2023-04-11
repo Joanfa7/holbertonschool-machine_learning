@@ -36,22 +36,28 @@
      - the softmax funciton is used for multi-class classification tasks. It transforms input values into probabilities that sum up to 1, making it suitable for output layers. It is defined as f(x_i) = exp(x_i)/Σ_j exp(x_j), where x_i is an input value and the sum runs over all input values.
 
 8. What is a layer?
+
    - A layer in a neural network referes to a group of neurons that perfomr specific computations on the input data. Layers are organized sequentially, with each layer transormaing the output form the previous layer and passing it to the next one. IN general there are three types of layers in nerutal networks:
-     -
-9. What is a hidden layer?
-10. What is Logistic Regression?
-11. What is a loss function?
-12. What is a cost function?
-13. What is forward propagation?
-14. What is Gradient Descent?
-15. What is back propagation?
-16. What is a Computation Graph?
-17. How to initialize weights/biases
-18. The importance of vectorization
-19. How to split up your data
-20. What is multiclass classification?
-21. What is a one-hot vector?
-22. How to encode/decode one-hot vectors
-23. What is the softmax function and when do you use it?
-24. What is cross-entropy loss?
-25. What is pickling in Python?
+
+     - Input Layer:
+
+     - Hidden Layer(s):
+
+     - Output Layers:
+
+9. What is Logistic Regression?
+10. What is a loss function?
+11. What is a cost function?
+12. What is forward propagation?
+13. What is Gradient Descent?
+14. What is back propagation?
+15. What is a Computation Graph?
+16. How to initialize weights/biases
+17. The importance of vectorization
+18. How to split up your data
+19. What is multiclass classification?
+20. What is a one-hot vector?
+21. How to encode/decode one-hot vectors
+22. What is the softmax function and when do you use it?
+23. What is cross-entropy loss?
+24. What is pickling in Python?
