@@ -24,11 +24,20 @@
    In ML, particularly in Neural Networks, bias is an additional parameter used alongside weights to fine-tune the output of a node. It represents an offset of intercept that adjusts the overall output value. Including bias allows the model to be more flexible an d
 
 7. What are activation functions?
+   Are mathematical funcitons used in artificial neural networks to introduce non-linearity and determine the output of a neuron based on its input.
+
    - Sigmoid?
+     - The sigmoid function (logistic function) squashes input values into a range bewtween 0 and 1. It is defined as f(x) = 1 / (1 + exp(-x)). It's similar to sigmoid but with range, making it better suited for hiden layers.
    - Tanh?
-   - Relu?
+     - The hyperbolic tangent (tanh) funciton sqashes input values into a range between -1 and 1. It defined as f(x) = (exp(x) - exp(-x)). It's similar to sigmoid but with a wider range, making it better suited to hidden layers.
+   - ReLU?
+     - The Rectified Linear Unit () function is a picewise linear function that sets all negative input values to zero and keeps positive input values unchanged. It is defined as f(x) = max(O,x). It helps to alleviate the vanishing gradiant problem and is commonly used in deep networks.
    - Softmax?
+     - the softmax funciton is used for multi-class classification tasks. It transforms input values into probabilities that sum up to 1, making it suitable for output layers. It is defined as f(x_i) = exp(x_i)/Σ_j exp(x_j), where x_i is an input value and the sum runs over all input values.
+
 8. What is a layer?
+   - A layer in a neural network referes to a group of neurons that perfomr specific computations on the input data. Layers are organized sequentially, with each layer transormaing the output form the previous layer and passing it to the next one. IN general there are three types of layers in nerutal networks:
+     -
 9. What is a hidden layer?
 10. What is Logistic Regression?
 11. What is a loss function?
