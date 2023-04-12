@@ -63,11 +63,11 @@
 
   Different loss functios are used depending on the specific problem being solved. some common loss funciton include:
 
-      - Mean Squared Error (MSE): Commonly used for regression problems, it calculates the average of the squared difference between the predicted and actual output values.
+  - Mean Squared Error (MSE): Commonly used for regression problems, it calculates the average of the squared difference between the predicted and actual output values.
 
-      - Cross-entropy Loss: Used for classification task, it measures the difference between the predicted probability distribution and the actual prbability distribution of the classes. Binary cross-entropy is used for binary classification, while categorical cross-entropy is used for multi-class classification.
+  - Cross-entropy Loss: Used for classification task, it measures the difference between the predicted probability distribution and the actual prbability distribution of the classes. Binary cross-entropy is used for binary classification, while categorical cross-entropy is used for multi-class classification.
 
-      - Hinge Loss: Commonly used in support vector machines and some linear classificaiton models, it measures the margin between the decission boundary and the data points.
+  - Hinge Loss: Commonly used in support vector machines and some linear classificaiton models, it measures the margin between the decission boundary and the data points.
 
 11. What is a cost function?
 
