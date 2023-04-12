@@ -39,23 +39,101 @@
 
    - A layer in a neural network referes to a group of neurons that perfomr specific computations on the input data. Layers are organized sequentially, with each layer transormaing the output form the previous layer and passing it to the next one. IN general there are three types of layers in nerutal networks:
 
-     - Input Layer:
+     - Input Layer: This is the firts layer that receives the input data. The number of neurons in this layer corresponds to the number of features in the input data.
 
-     - Hidden Layer(s):
+     - Hidden Layer(s): These are the intemediate layers between the input and output layers. They perform transfomations on the data, with each hidden layer extracting and learnging different levels of abstraction or representations of the input data. A neural network can have one or multiple fidden layers.
 
-     - Output Layers:
+     - Output Layers: this is the last layer in the neural network and produces the final output, such as class probabilities or predicted values. The number of neurons in this layer corresponds to the number of output categories or the dimentionality of the output.
 
 9. What is Logistic Regression?
+   Is a statistical method and a type of supervised machine learning algorithm used for binary classification tasks. It models the probability of a certaint class of event, such as prediction if an email is spam or not spam, by fitting the input data to a logistic function (sigmoid function).
+
+   The logistic function (sigmoid) takes the input features and weights, calculates a weighted sum, and then transforms the result into a probability value between 0 and 1. The resulting probability is used to determine which class the input data belongs to. If the probability is greater than a threshold (commonly 0.5), the model predicts the positive class (class1), otherwise, it predicts the negative class (class 0)
+
+   Logistic Regression is particularly useful for situations where the relatioship between the input features and the outpu class is non-linear. It can be extended to multi-class classification using techniques line One-vsAll or Softmas Regression.
+
 10. What is a loss function?
+
+- Is a mathematical function used in ML to quantify the difference between the predicted output and the actual ground truth output. It serves as a measure of how well the model is preforming during training. The objective of training a ML model is to minimize the value of the loss function.
+
+Different loss functios are used depending on the specific problem being solved. some common loss funciton include:
+
+      - Mean Squared Error (MSE): Commonly used for regression problems, it calculates the average of the squared difference between the predicted and actual output values.
+
+      - Cross-entropy Loss: Used for classification task, it measures the difference between the predicted probability distribution and the actual prbability distribution of the classes. Binary cross-entropy is used for binary classification, while categorical cross-entropy is used for multi-class classification.
+
+      - Hinge Loss: Commonly used in support vector machines and some linear classificaiton models, it measures the margin between the decission boundary and the data points.
+
 11. What is a cost function?
+
+- Sometimes also referred to as the objective funciton of loss funciton, is a measure of the overall perfomance of a ML model based on is predictions compared to true output values. The primary goal duringthe training preocess is the minimize the values of the cost function.
+
+the cost funciton quantifies the difference between the model's predictions and the actual output, helping the guide the model during training by adjusting its parameters (e.g. weights and biases in a nwural network) to achive better performance. The coice of a cost funciton depends on the specific problem and the type of model being used.
+
 12. What is forward propagation?
+
+- Is the process of passing input data thought a neural network to obtain predicitons of output values. It is sequence of calculations that stats at the input layer, goes though all the hideen layers, and ends at the output layer.
+
+In forward propagation, each neron in a layer receives input form the neurons in the precious layer. The input is multiplied by the correpsonding weight sand added to the bias term. The resulting value is the passed through an activation funciotn, which determines the output of the neuron. This output is then passed as input to the neruon in the following layer. This process continues until the output layer is reached, and the final predictions are calculated.
+
+The main goal of forward propagation is to calculate the output of the neural network based on the given input and the current calues of weights and biases. It is the first step in training a neural network, followed by the calculation of the loss using the loss funciotn, and the baclpropagation, which calculates the gradiants used to update the model's parameters.
+
 13. What is Gradient Descent?
+
+- Is an iterative optimization algorithm commonly used in ML and DL to minimize cost function. It is employed to find to find the optimal set of model parameters, such as weights and biases in a neural network, that results in the lowest possible cost.
+
+The main idea behind Gradient Descent is to update the model's parameters iteratively by moving in the direction of the steepest decrease in the cost function. this direction is determinde by the negative gradient of the cost function with respect to the parameters.
+
+The stpes incolced in Gradient Descent are as follows: - Inialize the model parameters with random values or using a predefined method.
+
+      - Calculate the gradient of the cost funcitoin with respect to each parameter. This gradient indicates the direction of the steepest increase in the cost function.
+
+      - Update the parameters by subtracting a fraction of the gradient form the current values. The fractio is determined by the learnig rate, which
+
+      - Repeat steps 2 and 3 until convergence or a maximum number of iterations is reached.
+
 14. What is back propagation?
+    Is an algorithm used in supervised learning for training arificial neural networks, particularly deep learning models. It is a form of supercised learning that minimizes the error between the predicted outputs and the actual ground truth outputs by adjusting the model's parameters, such as weights and biases.
+
+The main goal of backpropagation is to compute the gradiants of the cost function with respect to each parameter (weight and bias) in the neural network. These gradients are then used to update the model's parameters during gradient descent to minimize the cost function.
+
+Backpropagation is a application of the chain rule form calculus, which allows the efficient calculation of gradients in multi-layer networks. The algorithm consists of the following steps:
+
+      1. Perfomr a foward pass throught the network, calculating the output for a given input.
+
+      2. Calculate the error between the predicted output and the actual output using a cost function.
+
+      3. Compute the gradient of the cost funciton with respect to the output layer's activaitons.
+
+      4. For each layer in  the network, starting fomr the output layer and moving towards the input layer.
+
+      5. Update the model's parameters using the computed gradients and an optimization algorithm like gradient descent.
+
 15. What is a Computation Graph?
+    Is a directed acyclic graph that represents the sequence of operations and the folow of data in mathematical expression or a machine learning model, particularly in neural networks. In the graph, nodes represent operations or function, and edges represent the folow of data(usually in the fomr of tensors) between these operations Computation graphs provide a structured and cisual way to express complex computations, making it easier to undestand the dependencies between operations.
+
 16. How to initialize weights/biases
+    Biases are often initialized to zero or small values, while weights are initialized using methdos that depend on the activation funciton used in the network. the coice of initialization method can impact the speed of convergence and the final performance of the model, so it is essential to choose an appropriate stategy based ont eh netwoek architecture and activation function.
+
 17. The importance of vectorization
-18. How to split up your data
+    Vectorication is the process of converting scalar operations into equivalent vector or matrix operations, enabling the use of low-level optimizations and parallel processing capabilities of modern hardware, such as GPUs and SIMD units in CPUs. Vectorization plays a crucial role in the performance and efficiency of ML and DL computations.
+
+18. How to split up your data?
+    The data ins typically divides into training (60%-80%) validation(10%-20%) and test set(10%-20%).
+    1. Shuffle the data.
+    2. Split the data
+    3. Stratified Split
+    4. Time Series or Sequence Data.
+
+In Python you can use libraries like scikit-learn to voncerntionally split your data using functions like 'train_test_split()', for basic splits and 'timeSeriesSplit()' or 'StratifiedShuffleSplit()' for specialized cases like time series or strarified splits, respectively.
+
 19. What is multiclass classification?
+    Also know as multi-nominal or mulri-label clasificaiton, is a type of supervised learning problem where the goal is to assign an input sample to one of multiple possible classes or categories. In constrast, binary classification involves only two classes, and multi-label classificaiton involves assigning a sample to multiple classess simultaneously. Some examples are:
+
+    1. Handwritten digit recognition.
+    2. Text categorization
+    3. Iris Flowe classificaiton.
+
 20. What is a one-hot vector?
 21. How to encode/decode one-hot vectors
 22. What is the softmax function and when do you use it?
