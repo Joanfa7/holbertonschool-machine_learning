@@ -91,13 +91,13 @@
 
   The stpes incolced in Gradient Descent are as follows:
 
-      - Inialize the model parameters with random values or using a predefined method.
+  - Inialize the model parameters with random values or using a predefined method.
 
-      - Calculate the gradient of the cost funcitoin with respect to each parameter. This gradient indicates the direction of the steepest increase in the cost function.
+  - Calculate the gradient of the cost funcitoin with respect to each parameter. This gradient indicates the direction of the steepest increase in the cost function.
 
-      - Update the parameters by subtracting a fraction of the gradient form the current values. The fractio is determined by the learnig rate, which
+  - Update the parameters by subtracting a fraction of the gradient form the current values. The fractio is determined by the learnig rate, which
 
-      - Repeat steps 2 and 3 until convergence or a maximum number of iterations is reached.
+  - Repeat steps 2 and 3 until convergence or a maximum number of iterations is reached.
 
 14. What is back propagation?
 
@@ -107,15 +107,15 @@
 
   Backpropagation is a application of the chain rule form calculus, which allows the efficient calculation of gradients in multi-layer networks. The algorithm consists of the following steps:
 
-      1. Perfomr a foward pass throught the network, calculating the output for a given input.
+  1.  Perfomr a foward pass throught the network, calculating the output for a given input.
 
-      2. Calculate the error between the predicted output and the actual output using a cost function.
+  2.  Calculate the error between the predicted output and the actual output using a cost function.
 
-      3. Compute the gradient of the cost funciton with respect to the output layer's activaitons.
+  3.  Compute the gradient of the cost funciton with respect to the output layer's activaitons.
 
-      4. For each layer in  the network, starting fomr the output layer and moving towards the input layer.
+  4.  For each layer in the network, starting fomr the output layer and moving towards the input layer.
 
-      5. Update the model's parameters using the computed gradients and an optimization algorithm like gradient descent.
+  5.  Update the model's parameters using the computed gradients and an optimization algorithm like gradient descent.
 
 15. What is a Computation Graph?
 
