@@ -19,24 +19,22 @@ class Neuron:
             raise TypeError("nx must be an integer")
         if nx < 1:
             raise ValueError("nx must be a positive integer")
-        
+
         self.W = np.random.normal(0, 1, (1, nx))
         self.b = 0
         self.A = 0
 
         @property
-        def get_W(self):
+        def W(self):
             """ getter for W """
             return self.__W
 
         @property
-        def get_b(self):
+        def b(self):
             """ getter for b """
             return self.__b
 
         @property
-        def get_A(self):
+        def A(self):
             """ getter for A """
             return self.__A
-
-
