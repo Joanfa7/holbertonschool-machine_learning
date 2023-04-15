@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-
+""" Class NeuralNetwork that defines a neural network with one hidden layer"""""
 import numpy as np
 
 
 class NeuralNetwork:
     """Class NeuralNetwork that defines a neural network with one hidden layer"""
+
     def __init__(self, nx, nodes):
         """ Class constructor"""
         if not isinstance(nx, int):
