@@ -98,5 +98,5 @@ class Neuron():
         dW = np.matmul(dZ, X.T) / m
         db = np.sum(dZ) / m
 
-        self.__W = self.__W - (alpha * dW).T
+        self.__W = self.__W - (alpha * dW)
         self.__b = self.__b - (alpha * db)
