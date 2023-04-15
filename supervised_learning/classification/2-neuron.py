@@ -5,8 +5,10 @@ Script to create A Neuron with private instance
 
 import numpy as np
 
+
 class Neuron():
     """Class Neuron"""
+
     def __init__(self, nx):
         """
         Args:
@@ -26,7 +28,7 @@ class Neuron():
         Returns: private instance weight
         """
         return self.__W
-    
+
     @property
     def b(self):
         """
