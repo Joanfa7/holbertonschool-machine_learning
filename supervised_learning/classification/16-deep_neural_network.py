@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-""" DeepNeuralNetwork """
-
-import numpy as np
-
-
 class DeepNeuralNetwork:
     """ Class DeepNeuralNetwork """
 
     def __init__(self, nx, layers):
         """ Class constructor """
+        if isinstance(layers, int): # Check if layers is an integer
+            layers = [layers] # Convert the integer to a list with a single element
+        
         self.L = len(layers)
         self.cache = {}
         self.weights = {}
