@@ -1,51 +1,53 @@
-#!/usr/bin/env python3
-""" Neuron class. """
+#!/usr/bin/env python3=
+"""
+Script to create A Neuron with private instance
+"""
 
 import numpy as np
 
-
-class Neuron:
-    """ Neuron class."""
-
+class Neuron():
+    """Class Neuron"""
     def __init__(self, nx):
-        """ Class constructor.
-                Args: nx (int): number of input features to the neuron.
-                Attributes:
-                    W (numpy.ndarray): The weights vector for the neuron.
-                    b (int): The bias for the neuron.
-                    A (int): The activated output of the neuron (prediction).
+        """
+        Args:
+            nx: Type int the number of n inputs features into the ANW
         """
         if not isinstance(nx, int):
             raise TypeError("nx must be an integer")
         if nx < 1:
             raise ValueError("nx must be a positive integer")
+        self.__W = np.random.randn(nx).reshape(1, nx)
+        self.__b = 0
+        self.__A = 0
 
-        self.W = np.random.randn(1, nx)
-        self.b = 0
-        self.A = 0
+    @property
+    def W(self):
+        """
+        Returns: private instance weight
+        """
+        return self.__W
+    
+    @property
+    def b(self):
+        """
+        Returns: private instance bias
+        """
+        return self.__b
 
-        @property
-        def W(self):
-            """ getter for W """
-            return self.__W
-
-        @property
-        def b(self):
-            """ getter for b """
-            return self.__b
-
-        @property
-        def A(self):
-            """ getter for A """
-            return self.__A
+    @property
+    def A(self):
+        """
+        Returns: private instance output
+        """
+        return self.__A
 
     def forward_prop(self, X):
-        """ Calculates the forward propagation of the neuron.
-                Args:
-                    X (numpy.ndarray): The input data with shape (nx, m).
-                Returns:
-                    The private attribute __A.
         """
-        Z = np.matmul(self.W, X) + self.b
-        self.A = 1 / (1 + np.exp(-Z))
-        return self.A
+        Calculates the forward propagation of the neuron
+        Args:
+            X: Type np array with shape (nx, m) that contains the input data
+        Returns: private instance output
+        """
+        Z = np.matmul(self.__W, X) + self.__b
+        self.__A = 1 / (1 + np.exp(-Z))
+        return self.__A
