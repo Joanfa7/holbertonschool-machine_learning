@@ -52,7 +52,7 @@ class DeepNeuralNetwork:
                 self.__weights["b{}".format(i + 1)]
             self.__cache["A{}".format(i + 1)] = 1 / (1 + np.exp(-z))
         return self.__cache["A{}".format(i + 1)], self.__cache
-    
+
     def cost(self, Y, A):
         """ Calculates the cost of the model using logistic regression """
         m = Y.shape[1]
