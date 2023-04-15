@@ -4,7 +4,9 @@ import numpy as np
 
 
 class NeuralNetwork:
+    """Class NeuralNetwork that defines a neural network with one hidden layer"""
     def __init__(self, nx, nodes):
+        """ Class constructor"""
         if not isinstance(nx, int):
             raise TypeError("nx must be an integer")
         if nx < 1:
