@@ -8,13 +8,12 @@ class DeepNeuralNetwork:
 
     def __init__(self, nx, layers):
         """ Class constructor """
-        if isinstance(layers, int):  # Check if layers is an integer
-            # Convert the integer to a list with a single element
+        if isinstance(layers, int):
             layers = [layers]
 
-        self.L = len(layers)
-        self.cache = {}
-        self.weights = {}
+        self.__L = len(layers)
+        self.__cache = {}
+        self.__weights = {}
         if not isinstance(nx, int):
             raise TypeError("nx must be an integer")
         if nx < 1:
@@ -24,24 +23,22 @@ class DeepNeuralNetwork:
         for i in range(len(layers)):
             if not isinstance(layers[i], int) or layers[i] < 1:
                 raise TypeError("layers must be a list of positive integers")
-            self.weights["W{}".format(i + 1)] = np.random.randn(
+            self.__weights["W{}".format(i + 1)] = np.random.randn(
                 layers[i], nx) * np.sqrt(2 / nx)
-            self.weights["b{}".format(i + 1)] = np.zeros((layers[i], 1))
+            self.__weights["b{}".format(i + 1)] = np.zeros((layers[i], 1))
             nx = layers[i]
 
     @property
     def L(self):
-        """ Getter for L """
+        """ Getter method for L """
         return self.__L
-    
+
     @property
     def cache(self):
-        """ Getter for cache """
+        """ Getter method for cache """
         return self.__cache
-    
+
     @property
     def weights(self):
-        """ Getter for weights """
+        """ Getter method for weights """
         return self.__weights
-    
-    
