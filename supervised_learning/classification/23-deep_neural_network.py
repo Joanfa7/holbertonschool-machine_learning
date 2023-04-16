@@ -3,6 +3,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 class DeepNeuralNetwork:
     """ Class DeepNeuralNetwork """
 
@@ -76,7 +77,15 @@ class DeepNeuralNetwork:
             self.__weights["W{}".format(i)] -= alpha * dw
             self.__weights["b{}".format(i)] -= alpha * db
 
-    def train(self, X, Y, iterations=5000, alpha=0.05, verbose=True, graph=True, step=100):
+    def train(
+            self,
+            X,
+            Y,
+            iterations=5000,
+            alpha=0.05,
+            verbose=True,
+            graph=True,
+            step=100):
         """ Trains the deep neural network """
         if not isinstance(iterations, int):
             raise TypeError("iterations must be an integer")
@@ -97,7 +106,10 @@ class DeepNeuralNetwork:
             A, cache = self.forward_prop(X)
             self.gradient_descent(Y, cache, alpha)
             if verbose and i % step == 0:
-                print("Cost after {} iterations: {}".format(i, self.cost(Y, A)))
+                print(
+                    "Cost after {} iterations: {}".format(
+                        i, self.cost(
+                            Y, A)))
                 costs.append(self.cost(Y, A))
                 iters.append(i)
         if graph:
@@ -107,6 +119,3 @@ class DeepNeuralNetwork:
             plt.title("Training Cost")
             plt.show()
         return self.evaluate(X, Y)
-
-    
-
