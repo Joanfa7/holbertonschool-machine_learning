@@ -120,7 +120,6 @@ class DeepNeuralNetwork:
             plt.title("Training Cost")
             plt.show()
         return self.evaluate(X, Y)
-    
 
     def save(self, filename):
         """ Saves the instance object to a file in pickle format """
