@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+
+import tensorflow as tf
+
+
+def create_layer(prev, n, activation):
+    """Creates a layer of a neural network in tensorflow
+    Args:
+        prev: is the tensor output of the previous layer
+        n: is the number of nodes in the layer to create
+        activation: is the activation function that the layer should use
+    Returns:
+        the tensor output of the layer
+    """
+    init = tf.contrib.layers.variance_scaling_initializer(mode="FAN_AVG")
+    layer = tf.layers.Dense(units=n, activation=activation,
+                            kernel_initializer=init, name='layer')
+    return layer(prev)
