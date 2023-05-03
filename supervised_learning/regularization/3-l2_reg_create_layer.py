@@ -1,4 +1,4 @@
-#!/usr/bin/env pytohn3
+#!/usr/bin/env python3
 """Function that creates a tensorflow layer that includes L2 regularization"""
 
 import tensorflow as tf
