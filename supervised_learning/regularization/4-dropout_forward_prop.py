@@ -2,15 +2,26 @@
 """ Function that creates a tensorflow layer that includes dropout 
 regularization"""
 
-import tensorflow as tf
+import numpy as np
 
 
-def dropout_create_layer(prev, n, activation, keep_prob):
-    """Function that creates a tensorflow layer that includes dropout 
+def dropout_forward_prop(X, weights, L, keep_prob):
+    """ Function that creates a tensorflow layer that includes dropout
     regularization"""
-    kernel = tf.contrib.layers.variance_scaling_initializer(mode="FAN_AVG")
-    dropout = tf.layers.Dropout(keep_prob)
-    layer = tf.layers.Dense(units=n, activation=activation,
-                            kernel_initializer=kernel,
-                            kernel_regularizer=dropout)
-    return layer(prev)
+    cache = {}
+    cache['A0'] = X
+    for i in range(L):
+        w = weights['W' + str(i + 1)]
+        b = weights['b' + str(i + 1)]
+        a = cache['A' + str(i)]
+        z = np.matmul(w, a) + b
+        if i == L - 1:
+            t = np.exp(z)
+            cache['A' + str(i + 1)] = t / np.sum(t, axis=0, keepdims=True)
+        else:
+            a = np.tanh(z)
+            d = np.random.rand(a.shape[0], a.shape[1])
+            d = np.where(d < keep_prob, 1, 0)
+            cache['D' + str(i + 1)] = d
+            cache['A' + str(i + 1)] = a * d / keep_prob
+    return cache
