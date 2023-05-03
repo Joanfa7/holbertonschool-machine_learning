@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Function that creates a tensorflow layer that includes dropout 
+""" Function that creates a tensorflow layer that includes dropout
 regularization"""
 
 import numpy as np
