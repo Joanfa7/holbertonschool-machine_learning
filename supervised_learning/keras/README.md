@@ -163,13 +163,13 @@
 
     Optimizing a machine learning model involves several stategies and techniques. Here are some of the most common approaches: 1. Choose the richt Architecture: Depending on the problem you're solvin (classification,regression, etc.) certain architectures may perfomr better than others. For example, Convolutional Neural Networks (CNNs) generally perform well on image data, wile Recurrent Neural Networks (RNNs) are often used for sequential data.
 
-        1. Hyperparameter Tuning: Adjusting the parameters of the learning algorithm can have a big impact on model performance. This includes things like the learning rate, batch size, number of layers, number of neurons per layer, and dropout rate. Grid search or randomized search can be used for exhaustive search, while Bayesian optimization, generic algorithms, or thechniques like optuna can be used for more efficient search.
+    1. Hyperparameter Tuning: Adjusting the parameters of the learning algorithm can have a big impact on model performance. This includes things like the learning rate, batch size, number of layers, number of neurons per layer, and dropout rate. Grid search or randomized search can be used for exhaustive search, while Bayesian optimization, generic algorithms, or thechniques like optuna can be used for more efficient search.
 
-        2. data Augmentation: By artificially increasing the size of the training set, data augmentation can help improve performance and prevent overfitting. This can involve things like rotating, shifting, or flipping images for a convolutional neural network.
+    2. data Augmentation: By artificially increasing the size of the training set, data augmentation can help improve performance and prevent overfitting. This can involve things like rotating, shifting, or flipping images for a convolutional neural network.
 
-        3. Early Stopping: This technique stops training when te perfomrance on a validation set stps improving, which can prevent overfitting.
+    3. Early Stopping: This technique stops training when te perfomrance on a validation set stps improving, which can prevent overfitting.
 
-        4. Batch Normalization: Batch normalization standardizes the imputs to a layer for each mini-batch, which can help improve the speed, performance, and stability of the neural network.
+    4. Batch Normalization: Batch normalization standardizes the imputs to a layer for each mini-batch, which can help improve the speed, performance, and stability of the neural network.
 
     The process of optimizing a model involves a lot of experimentation and iteration, and the techinques that work best can vary depending on the specific problem and dataset.
 
@@ -189,14 +189,13 @@
 
         model.fit(train_data, train_labels, epochs=10, batch_size=32)
 
+    1. 'train_data': This is the training data that will be used to train the model.
 
-        1. 'train_data': This is the training data that will be used to train the model.
+    2. 'train_label': These are the labels corresponding thetraining data.
 
-        2. 'train_label': These are the labels corresponding thetraining data.
+    3. 'epoch=10': This specifies the number of times the learning algorithm will pass thwough the entire training dataset. One epoch means one pass though the entire dataset.
 
-        3. 'epoch=10': This specifies the number of times the learning algorithm will pass thwough the entire training dataset. One epoch means one pass though the entire dataset.
-
-        4. 'batch_size=32': This trains the model for a fixed number of epochs.
+    4. 'batch_size=32': This trains the model for a fixed number of epochs.
 
     You can also specify a validation set to monitor the validation loss and metrics during training:
 
@@ -282,7 +281,7 @@
 15. How to access the weights/outputs of a model
     In Keras, you can access the weights of a model using the 'get_weights' method and the outputs of a model usign the 'output' property.
 
-        1. Accessing Weights: You can use the 'get_weights' and 'set_weights' methods to ge and set the model weights. Each layer has these methods which return or set the weights for that layer.
+    1.  Accessing Weights: You can use the 'get_weights' and 'set_weights' methods to ge and set the model weights. Each layer has these methods which return or set the weights for that layer.
 
             # get the weights of the first layer
             weights = model.layers[0].get_weights()
@@ -290,18 +289,14 @@
             # set the weights of the first layer
             model.layer[0].set_weigts(weights)
 
+    Note that 'get_weights' retuns a list of numpy arrays. For a Dense layer, the list will have two elements: the first element is a 2D array of the weights, and the second element is a 1D array of the biases.
 
-        Note that 'get_weights' retuns a list of numpy arrays. For a Dense layer, the list will have two elements: the first element is a 2D array of the weights, and the second element is a 1D array of the biases.
-
-        2. Accessing Outputs: Each layer has an 'output' property that gices the symbolic output of that layer. Here's how you can get the output of a specific layer:
-
+    2.  Accessing Outputs: Each layer has an 'output' property that gices the symbolic output of that layer. Here's how you can get the output of a specific layer:
 
             # get the ouput of the first layer
             outpu = model.layers[0].output
 
-
-        If you want to get the actual values of a layer for a specific input, you can define a new model that ends at the layer and call 'predict' on it:
-
+    If you want to get the actual values of a layer for a specific input, you can define a new model that ends at the layer and call 'predict' on it:
 
             from keras.models import Model
 
@@ -311,5 +306,4 @@
             # get the output values of the first layer for a sepcific input.
             intermediate_output = intermediate_model.predict(x_test)
 
-
-        In this example, x_test is the input data for which you want to get the output of the first layer. The 'predict' method returns the actual output values of the first layer for 'x_test'.
+    In this example, x_test is the input data for which you want to get the output of the first layer. The 'predict' method returns the actual output values of the first layer for 'x_test'.
