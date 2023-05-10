@@ -75,9 +75,7 @@
 
         from keras.layers import LSTM
 
-        lstm_layr = LSTM(64)
-
-        # This creates a recurrent LSTM layer with 64 units.
+        lstm_layr = LSTM(64) # This creates a recurrent LSTM layer with 64 units.
 
 5.  How to add regularization to a layer
     Regularization is a technique used to prevent overfitting in neural networks by adding a penalty to the loss function based on the complexity of the model. In Keras, you can be add regularization to layers using the 'hernel_regularizer', 'bias_regularizer', and 'activity_regularizer' arguments when creating a layer.
