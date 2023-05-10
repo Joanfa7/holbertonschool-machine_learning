@@ -55,9 +55,9 @@
 4.  How to build a layer
     In Keras, you build layers using predefined classes. Each type of layer serves a different purpose, such as dense layers for fully connected networks, convolutional layers for image processing, and recurrent layers for sequences. When creatign a layer, you typically provide some parameters, such as the number of neurons or the activation function.
 
-        Example:
+    Example:
 
-        1. Dense (Fully Connected) Layer:
+    1.  Dense (Fully Connected) Layer:
 
             from keras.layers import Dense
 
@@ -65,23 +65,19 @@
 
             # Creates a dense layer with 128 neurons using the ReLU activation funciton.
 
-
-        2. Convolutional Layer:
+    2.  Convolutional Layer:
 
             from keras.layers import Conv2D
 
             conv_layer = Conv2D(32, kernel_size(3, 3,), activation 'relu')
 
+    3.  Recurrent Layer (LSTM):
 
+        from keras.layers import LSTM
 
-        3. Recurrent Layer (LSTM):
+        lstm_layr = LSTM(64)
 
-
-            from keras.layers import LSTM
-
-            lstm_layr = LSTM(64)
-
-            # This creates a recurrent LSTM layer with 64 units.
+        # This creates a recurrent LSTM layer with 64 units.
 
 5.  How to add regularization to a layer
     Regularization is a technique used to prevent overfitting in neural networks by adding a penalty to the loss function based on the complexity of the model. In Keras, you can be add regularization to layers using the 'hernel_regularizer', 'bias_regularizer', and 'activity_regularizer' arguments when creating a layer.
@@ -100,9 +96,7 @@
        from keras.layers import Dense
        from keras.regularizers import L1L2
 
-       dense_layer = Dense(128, activation='relu', kernel_regularizer=L1L2(L1=0.01, l2=0.01))
-
-       # This creates a dense layer with 128 neurons, ReLU activation,and both L1 and L2 regularization on the withs with a regularizaiton stregth of 0.01 for each.
+       dense_layer = Dense(128, activation='relu', kernel_regularizer=L1L2(L1=0.01, l2=0.01)) # This creates a dense layer with 128 neurons, ReLU activation,and both L1 and L2 regularization on the withs with a regularizaiton stregth of 0.01 for each.
 
     You can use the same approach to add regularization to other types of layers, such as convolutional an recurrent layers.
 
@@ -171,13 +165,13 @@
 
     Optimizing a machine learning model involves several stategies and techniques. Here are some of the most common approaches: 1. Choose the richt Architecture: Depending on the problem you're solvin (classification,regression, etc.) certain architectures may perfomr better than others. For example, Convolutional Neural Networks (CNNs) generally perform well on image data, wile Recurrent Neural Networks (RNNs) are often used for sequential data.
 
-        2. Hyperparameter Tuning: Adjusting the parameters of the learning algorithm can have a big impact on model performance. This includes things like the learning rate, batch size, number of layers, number of neurons per layer, and dropout rate. Grid search or randomized search can be used for exhaustive search, while Bayesian optimization, generic algorithms, or thechniques like optuna can be used for more efficient search.
+        1. Hyperparameter Tuning: Adjusting the parameters of the learning algorithm can have a big impact on model performance. This includes things like the learning rate, batch size, number of layers, number of neurons per layer, and dropout rate. Grid search or randomized search can be used for exhaustive search, while Bayesian optimization, generic algorithms, or thechniques like optuna can be used for more efficient search.
 
-        3. data Augmentation: By artificially increasing the size of the training set, data augmentation can help improve performance and prevent overfitting. This can involve things like rotating, shifting, or flipping images for a convolutional neural network.
+        2. data Augmentation: By artificially increasing the size of the training set, data augmentation can help improve performance and prevent overfitting. This can involve things like rotating, shifting, or flipping images for a convolutional neural network.
 
-        4. Early Stopping: This technique stops training when te perfomrance on a validation set stps improving, which can prevent overfitting.
+        3. Early Stopping: This technique stops training when te perfomrance on a validation set stps improving, which can prevent overfitting.
 
-        5. Batch Normalization: Batch normalization standardizes the imputs to a layer for each mini-batch, which can help improve the speed, performance, and stability of the neural network.
+        4. Batch Normalization: Batch normalization standardizes the imputs to a layer for each mini-batch, which can help improve the speed, performance, and stability of the neural network.
 
     The process of optimizing a model involves a lot of experimentation and iteration, and the techinques that work best can vary depending on the specific problem and dataset.
 
