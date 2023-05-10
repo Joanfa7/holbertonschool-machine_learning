@@ -11,10 +11,9 @@ def build_model(nx, layers, activations, lambtha, keep_prob):
     for i in range(len(layers)):
         if i == 0:
             output = K.layers.Dense(layers[i], activation=activations[i],
-                                    kernel_regularizer=L2,
-                                    name='dense')(input)
+                                    kernel_regularizer=L2)(input)
         else:
+            dropout = K.layers.Dropout(1 - keep_prob)(output)
             output = K.layers.Dense(layers[i], activation=activations[i],
-                                    kernel_regularizer=L2,
-                                    name='dense_' + str(i))(output)
+                                    kernel_regularizer=L2)(dropout)
     return K.Model(inputs=input, outputs=output)
