@@ -1,4 +1,4 @@
-#!/usr/bin/env pytohn3
+#!/usr/bin/env python3
 ''' Function that tests a neural network '''
 
 import tensorflow.keras as K
