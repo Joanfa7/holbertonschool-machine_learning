@@ -14,48 +14,49 @@
 
     A typical deep learning model consists of the following components:
 
-        - Architecture: The structure of the model, including the number of layers, the types of layers(e.g., dense, convolutional, recurrent), and the connections between them.
+    - Architecture: The structure of the model, including the number of layers, the types of layers(e.g., dense, convolutional, recurrent), and the connections between them.
 
-        - Parameters: The weights and biases with the model, wich are adjusted during training to minimize the difference between the model's predictions and the actual output (i.e., to reduce the loss function)
+    - Parameters: The weights and biases with the model, wich are adjusted during training to minimize the difference between the model's predictions and the actual output (i.e., to reduce the loss function)
 
-        - Activation functions : Nonlinear functions applied to the output of each reuton that determine the final output. Some common activation functions include the sigmoid, ReLU (rectified linear unit), and softmax functions.
+    - Activation functions : Nonlinear functions applied to the output of each reuton that determine the final output. Some common activation functions include the sigmoid, ReLU (rectified linear unit), and softmax functions.
 
-        - Loss function: A mentric used to meassure the difference between the model's predictions and the actual output. the goal training is to minimize the loss function. Common loss function include mean squared error, categorical cross-entropy, and binary cross-entropy.
+    - Loss function: A mentric used to meassure the difference between the model's predictions and the actual output. the goal training is to minimize the loss function. Common loss function include mean squared error, categorical cross-entropy, and binary cross-entropy.
 
-        -Optimization: An algorithm used to update the model's parameters during training, such as gradient descent or its cariations like strochatic gradient descent, Adam, and RMSprop.
+    -Optimization: An algorithm used to update the model's parameters during training, such as gradient descent or its cariations like strochatic gradient descent, Adam, and RMSprop.
 
 3.  How to instantiate a model (2 ways)
 
     In Keras, you can create a neural network model using two different approaches: the Sequentail API and the Functional API.
 
-        - The Sequential API is a lineal track of layers, where you simpli add one layer at a time, and each layer is connected to the precious one in the order they are added. This approach is suitable for simple feedforward neural networks with any complex connections or braching.
+    - The Sequential API is a lineal track of layers, where you simpli add one layer at a time, and each layer is connected to the precious one in the order they are added. This approach is suitable for simple feedforward neural networks with any complex connections or braching.
 
-        ```
-            from keras.models import Sequential
-            from keras.layers import Dense
+      ```
+          from keras.models import Sequential
+          from keras.layers import Dense
 
-            model Sequential()
-            model.add(Dense(64, activation='relu', input_shape=(784,)))
-            model.add(Dense(32, activation='relu'))
-            model.add(Dense(10, activation='softmax'))
+          model Sequential()
+          model.add(Dense(64, activation='relu', input_shape=(784,)))
+          model.add(Dense(32, activation='relu'))
+          model.add(Dense(10, activation='softmax'))
 
-        ```
+      ```
 
-        - The Functional API allows for more flexibility when defining the model's architecture. You can create models with multiple inputs, multple outputs, shared layers, or overn recurrent connections between layers. this approach is suitable for more complex neural network architectures.
+    - The Functional API allows for more flexibility when defining the model's architecture. You can create models with multiple inputs, multple outputs, shared layers, or overn recurrent connections between layers. this approach is suitable for more complex neural network architectures.
 
-        ```
-            from keras.layer import Input, Dense
-            from keras. models import Models
+          ```
+              from keras.layer import Input, Dense
+              from keras. models import Models
 
-            inputs = Input(shape=(784,))
-            x = Dense(64, activation='relu')(inputs)
-            x = Dense(32, activation='relu')(x)
-            outputs = Dense(10, activation='softmax')(x)
+              inputs = Input(shape=(784,))
+              x = Dense(64, activation='relu')(inputs)
+              x = Dense(32, activation='relu')(x)
+              outputs = Dense(10, activation='softmax')(x)
 
-            model = Model(inputs= inputs, outputs= outputs)
+              model = Model(inputs= inputs, outputs= outputs)
 
-        ```
-        Both APIs can be used to create a wide cariaty of neural newtork architectures in Keras, but the coice depends on the complexity of the model and the specific requirements of your project.
+          ```
+
+      Both APIs can be used to create a wide cariaty of neural newtork architectures in Keras, but the coice depends on the complexity of the model and the specific requirements of your project.
 
 4.  How to build a layer
     In Keras, you build layers using predefined classes. Each type of layer serves a different purpose, such as dense layers for fully connected networks, convolutional layers for image processing, and recurrent layers for sequences. When creatign a layer, you typically provide some parameters, such as the number of neurons or the activation function.
