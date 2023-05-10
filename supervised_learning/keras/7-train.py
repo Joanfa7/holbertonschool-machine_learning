@@ -4,7 +4,7 @@
 import tensorflow.keras as K
 
 
-def train_model(network, data, labels, batch_zize, validation_data=None,
+def train_model(network, data, labels, batch_zize, epochs, validation_data=None,
                 early_stopping=False, patience=0, learning_rate_decay=False,
                 alpha=0.1, decay_rate=1, verbose=True, shuffle=False):
     ''' Function that trains a model using mini-batch gradient descent '''
