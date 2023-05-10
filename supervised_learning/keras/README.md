@@ -1,6 +1,6 @@
 # Keras
 
-!(Keras)[https://keras.io/img/logo.png]
+![keras](https://keras.io/img/logo.png)
 
 ## Learning Objectives
 
