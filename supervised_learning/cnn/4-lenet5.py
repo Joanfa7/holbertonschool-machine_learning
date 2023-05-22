@@ -19,8 +19,14 @@ def lenet5(x, y):
     conv1 = tf.layers.Conv2D(filters=6, kernel_size=(5, 5), padding='same',
                              activation=activation, kernel_initializer=init)(x)
     pool1 = tf.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2))(conv1)
-    conv2 = tf.layers.Conv2D(filters=16, kernel_size=(5, 5), padding='valid',
-                             activation=activation, kernel_initializer=init)(pool1)
+    conv2 = tf.layers.Conv2D(
+        filters=16,
+        kernel_size=(
+            5,
+            5),
+        padding='valid',
+        activation=activation,
+        kernel_initializer=init)(pool1)
     pool2 = tf.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2))(conv2)
     flatten = tf.layers.Flatten()(pool2)
     fc1 = tf.layers.Dense(units=120, activation=activation,
