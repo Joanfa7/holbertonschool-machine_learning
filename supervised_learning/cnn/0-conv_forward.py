@@ -1,61 +1,37 @@
 #!/usr/bin/env python3
-'''
-Write a function def conv_forward(A_prev, W, b, activation, padding="same", stride=(1, 1)): that performs forward propagation over a convolutional layer of a neural network:
-
-A_prev is a numpy.ndarray of shape (m, h_prev, w_prev, c_prev) containing the output of the previous layer
-m is the number of examples
-h_prev is the height of the previous layer
-w_prev is the width of the previous layer
-c_prev is the number of channels in the previous layer
-W is a numpy.ndarray of shape (kh, kw, c_prev, c_new) containing the kernels for the convolution
-kh is the filter height
-kw is the filter width
-c_prev is the number of channels in the previous layer
-c_new is the number of channels in the output
-b is a numpy.ndarray of shape (1, 1, 1, c_new) containing the biases applied to the convolution
-activation is an activation function applied to the convolution
-padding is a string that is either same or valid, indicating the type of padding used
-stride is a tuple of (sh, sw) containing the strides for the convolution
-sh is the stride for the height
-sw is the stride for the width
-you may import numpy as np
-Returns: the output of the convolutional layer
-'''
+''' Convolutional Forward Propagation '''
 
 import numpy as np
 
-def conv_forward(A_prev, W, b, activation, padding="same", stride=(1, 1)):
-    ''' Forward prop over a convolutional layer of a neural network '''
-    # Get dimensions
+def pool_forward(A_prev, kernel_shape, stride=(1, 1), mode='max'):
+    ''' performs forward propagation over a pooling layer of a neural network
+        A_prev ndarray (m, h_prev, w_prev, c_prev) input to pool layer
+            m is number of examples
+            h_prev is height of prev layer
+            w_prev is width of prev layer
+            c_prev is number of channels in prev layer
+        kernel_shape is tuple (kh, kw) size of kernel for pooling
+            kh is kernel height
+            kw is kernel width
+        stride is tuple (sh, sw) of strides for pooling
+            sh is stride for height
+            sw is stride for width
+        mode is string either max or avg to indicate type of pooling
+        Returns: output of pooling layer
+    '''
     m, h_prev, w_prev, c_prev = A_prev.shape
-    kh, kw, c_prev, c_new = W.shape
+    kh, kw = kernel_shape
     sh, sw = stride
-
-    # Calculate padding
-    ph = 0
-    pw = 0
-    if padding == 'same':
-        ph = int(np.ceil(((h_prev - 1) * sh + kh - h_prev) / 2))
-        pw = int(np.ceil(((w_prev - 1) * sw + kw - w_prev) / 2))
-
-    # Create output volume
-    output_h = int(((h_prev + 2 * ph - kh) / sh) + 1)
-    output_w = int(((w_prev + 2 * pw - kw) / sw) + 1)
-
-    output = np.zeros((m, output_h, output_w, c_new))
-
-    # Pad input
-    A_prev_pad = np.pad(A_prev, ((0, 0), (ph, ph), (pw, pw), (0, 0)),
-                        'constant', constant_values=0)
-    
-    # Loop over output array
-    for x in range(output_w):
-        for y in range(output_h):
-            for z in range(c_new):
-                # Get slice
-                slice = A_prev_pad[:, y * sh:y * sh + kh, x * sw:x * sw + kw, :]
-                # Apply convolution
-                output[:, y, x, z] = activation(np.sum(np.multiply(slice, W[:, :, :, z]), axis=(1, 2, 3)))
-    return output
-
+    h_out = int(((h_prev - kh) / sh) + 1)
+    w_out = int(((w_prev - kw) / sw) + 1)
+    A = np.zeros((m, h_out, w_out, c_prev))
+    for i in range(h_out):
+        for j in range(w_out):
+            if mode == 'max':
+                A[:, i, j, :] = np.max(A_prev[:, i*sh:i*sh+kh, j*sw:j*sw+kw, :],
+                                       axis=(1, 2))
+            if mode == 'avg':
+                A[:, i, j, :] = np.mean(A_prev[:, i*sh:i*sh+kh, j*sw:j*sw+kw, :],
+                                        axis=(1, 2))
+    return A
 
