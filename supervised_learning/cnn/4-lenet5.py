@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 ''' modified LeNet-5 using tensorflow '''
 
-import tensorflow.compat.v1 as tf
+import tensorflow as tf
 
 
 def lenet5(x, y):
