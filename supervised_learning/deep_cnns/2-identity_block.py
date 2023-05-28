@@ -5,7 +5,8 @@ import tensorflow.keras as K
 
 
 def identity_block(A_prev, filters):
-    """creates an identity block as described in Deep Residual Learning for image Recognition"""
+    """creates an identity block as described in Deep Residual
+    Learning for image Recognition"""
     F11, F3, F12 = filters
     init = K.initializers.he_normal()
     conv1 = K.layers.Conv2D(
