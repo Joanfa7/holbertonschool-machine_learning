@@ -5,7 +5,7 @@ import tensorflow.keras as K
 
 
 def dense_block(X, nb_filters, growth_rate, layers):
-    """Function that builds a dense block as described in 
+    """Function that builds a dense block as described in
     Densely Connected  Convolutional Networks"""
     init = K.initializers.he_normal(seed=None)
     for i in range(layers):
