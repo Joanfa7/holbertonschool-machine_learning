@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 ''' moving average '''
 
-import tensorflow as tf
-
 
 def moving_average(data, beta):
     ''' calculates the weighted moving average of a data set '''
