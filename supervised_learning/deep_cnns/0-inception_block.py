@@ -21,5 +21,5 @@ def inception_block(A_prev, filters):
                               padding='same')(A_prev)
     convPP = K.layers.Conv2D(filters=FPP, kernel_size=(1, 1),
                              padding='same', activation='relu')(pool)
-    output = K.layers.concatenate([conv1, conv3, conv5, convPP])
+    output = K.layers.concatenate((conv1, conv3, conv5, convPP))
     return output
