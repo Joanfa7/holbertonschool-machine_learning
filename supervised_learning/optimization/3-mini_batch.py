@@ -12,57 +12,37 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid, batch_size=32, epochs=5
     # Define the neural network model
 
     with tf.Session() as sess:
-        ''' import meta graph and restore weights '''
-        saver = tf.train.import_meta_graph(load_path + '.meta')
-        saver.restore(sess, load_path)
-        graph = tf.get_default_graph()
-
-        ''' get placeholders from graph '''
-        x = graph.get_tensor_by_name("x:0")
-        y = graph.get_tensor_by_name("y:0")
-        m = graph.get_tensor_by_name("m:0")
-        accuracy = graph.get_tensor_by_name("Mean_1:0")
-        loss = graph.get_tensor_by_name("Mean:0")
-        train_op = graph.get_operation_by_name("train_op")
-
-        ''' get collection of trainable variables '''
-        train_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES)
-
-        for epoch in range(epochs + 1):
-            steps = m // batch_size + 1
-            print("After {} epochs:".format(epoch))
-            train_cost = sess.run(
-                loss, feed_dict={x: X_train, y: Y_train, m: X_train.shape[0]})
-            print("\tTraining Cost: {}".format(train_cost))
+        new_saver = tf.train.import_meta_graph(load_path + '.meta')
+        new_saver.restore(sess, load_path)
+        x = tf.get_collection('x')[0]
+        y = tf.get_collection('y')[0]
+        accuracy = tf.get_collection('accuracy')[0]
+        loss = tf.get_collection('loss')[0]
+        train_op = tf.get_collection('train_op')[0]
+        for i in range(epochs + 1):
+            train_cost = sess.run(loss, feed_dict={x: X_train, y: Y_train})
             train_accuracy = sess.run(
-                accuracy, feed_dict={x: X_train, y: Y_train, m: X_train.shape[0]})
-            print("\tTraining Accuracy: {}".format(train_accuracy))
-            valid_cost = sess.run(
-                loss, feed_dict={x: X_valid, y: Y_valid, m: X_valid.shape[0]})
-            print("\tValidation Cost: {}".format(valid_cost))
+                accuracy, feed_dict={x: X_train, y: Y_train})
+            valid_cost = sess.run(loss, feed_dict={x: X_valid, y: Y_valid})
             valid_accuracy = sess.run(
-                accuracy, feed_dict={x: X_valid, y: Y_valid, m: X_valid.shape[0]})
+                accuracy, feed_dict={x: X_valid, y: Y_valid})
+            print("After {} epochs:".format(i))
+            print("\tTraining Cost: {}".format(train_cost))
+            print("\tTraining Accuracy: {}".format(train_accuracy))
+            print("\tValidation Cost: {}".format(valid_cost))
             print("\tValidation Accuracy: {}".format(valid_accuracy))
-
-            x_shuffled = X_train
-            y_shuffled = Y_train
-
-            ''' shuffle training data '''
-            for step in range(steps):
-                star = step * batch_size
-                end = (step + 1) * batch_size
-                x_batch = x_shuffled[star:end]
-                y_batch = y_shuffled[star:end]
-
-                sess.run(train_op, feed_dict={
-                         x: x_batch, y: y_batch, m: x_batch.shape[0]})
-                if step != 0 and (step + 1) % 100 == 0:
-                    step_cost = sess.run(
-                        loss, feed_dict={x: x_batch, y: y_batch, m: x_batch.shape[0]})
-                    step_accuracy = sess.run(accuracy, feed_dict={
-                                             x: x_batch, y: y_batch, m: x_batch.shape[0]})
-                    print("\tStep {}:".format(step + 1))
-                    print("\t\tCost: {}".format(step_cost))
-                    print("\t\tAccuracy: {}".format(step_accuracy))
-        ''' save the model '''
-        return saver.save(sess, save_path)
+            if i < epochs:
+                X_shuffled, Y_shuffled = shuffle_data(X_train, Y_train)
+                for j in range(0, X_train.shape[0], batch_size):
+                    X_batch = X_shuffled[j:j + batch_size]
+                    Y_batch = Y_shuffled[j:j + batch_size]
+                    sess.run(train_op, feed_dict={x: X_batch, y: Y_batch})
+                    if j != 0 and (j / batch_size + 1) % 100 == 0:
+                        batch_cost = sess.run(
+                            loss, feed_dict={x: X_batch, y: Y_batch})
+                        batch_accuracy = sess.run(
+                            accuracy, feed_dict={x: X_batch, y: Y_batch})
+                        print("\tStep {}:".format(j // batch_size + 1))
+                        print("\t\tCost: {}".format(batch_cost))
+                        print("\t\tAccuracy: {}".format(batch_accuracy))
+        return new_saver.save(sess, save_path)
