@@ -16,7 +16,8 @@ def train_mini_batch(
         epochs=5,
         load_path="/tmp/model.ckpt",
         save_path="/tmp/model.ckpt"):
-    ''' trains a loaded neural network model using mini-batch gradient descent'''
+    ''' trains a loaded neural network model using mini-batch 
+    gradient descent'''
     # Define the neural network model
 
     with tf.Session() as sess:
