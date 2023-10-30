@@ -1,9 +1,11 @@
-
+#!/usr/bin/env python3
+""" definitenes """
 
 import numpy as np
 
 
 def definiteness(matrix):
+    """ definiteness"""
     if not isinstance(matrix, np.ndarray):
         raise TypeError('matrix must be a numpy.ndarray')
 
