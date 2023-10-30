@@ -3,7 +3,8 @@
 
 
 def determinant(matrix):
-    # Check if matrix is a list of lists
+    """ Calculates the determinant of a matrix """
+
     if not (
         isinstance(
             matrix,
