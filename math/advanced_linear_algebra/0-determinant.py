@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+""" Determinant """
+
+
 def determinant(matrix):
     # Check if matrix is a list of lists
     if not (
