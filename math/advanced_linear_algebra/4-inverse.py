@@ -4,6 +4,7 @@
 
 
 def inverse(matrix):
+    """ Function that calculates the inverse of a matrix """
     if not isinstance(
         matrix,
         list) or not all(
@@ -36,7 +37,8 @@ def inverse(matrix):
             # Find a row below with a non-zero value in the same column
             for j in range(i + 1, n):
                 if augmented_matrix[j][i] != 0:
-                    augmented_matrix[i], augmented_matrix[j] = augmented_matrix[j], augmented_matrix[i]
+                    augmented_matrix[i], augmented_matrix[j] = \
+                        augmented_matrix[j], augmented_matrix[i]
                     diag_value = augmented_matrix[i][i]
                     break
             else:
