@@ -3,6 +3,7 @@
 
 import numpy as np
 
+
 def mean_cov(X):
     """ calculates the mean and covariance of a data set
         X: np.ndarray (n, d) dataset
@@ -12,7 +13,7 @@ def mean_cov(X):
           mean: np.ndarray (1, d) mean of the data set
           cov: np.ndarray (d, d) covariance matrix of the data set
     """
-    if type(X) is not np.ndarray or len(X.shape) != 2:
+    if not isinstance(X, np.ndarray) or len(X.shape) != 2:
         raise TypeError("X must be a 2D numpy.ndarray")
     n, d = X.shape
     if n < 2:
