@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
-""" likehood """
+""" likelihood function """
 
 import numpy as np
 
+
 def likelihood(x, n, p):
-    """ """
-    if type(n) is not int or n <= 0:
+    """ liklihood function """
+    if not isinstance(n, int) or n <= 0:
         raise ValueError("n must be a positive integer")
-    if type(x) is not int or x < 0:
-        raise ValueError("x must be an integer that is greater than or equal to 0")
+    if not isinstance(x, int) or x < 0:
+        raise ValueError(
+            "x must be an integer that is greater than or equal to 0")
     if x > n:
         raise ValueError("x cannot be greater than n")
-    if type(p) is not np.ndarray:
+    if not isinstance(p, np.ndarray):
         raise TypeError("p must be a 1D numpy.ndarray")
     if len(p.shape) != 1:
         raise TypeError("p must be a 1D numpy.ndarray")
