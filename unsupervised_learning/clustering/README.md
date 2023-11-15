@@ -111,6 +111,12 @@
 
         3. Identify the Elbow Point: as k increases, the SSE tends to decrease as the points are closer to the centroids the are assigned to. However, the reduction in SSE slows down at some point, creating an "elbow" int the graph. This point is where increasing the number of clusters does not provide much better modeling of the data. The x-coordinate of this "elbow" point is considered to be the appropriate number of clusters.
 
+
+
+
+11. What is the Bayesian Information Criterion?
+    The Bayesian Information Criterion (BIC) is a criterion for model selection among for model selection among a fine set of models. It is based on the likelihood function and is used in various statistical models, including those in machine learning. The BIC is particularly used ful in clustering and other unsupervised learning scenario, such as selecting the number of clusters in K-means or the number of components in a Gaussian Mixture Model (GMM)
+
         BIC=ln(n)k−2ln(L^)
 
         where:
@@ -119,21 +125,39 @@
         - k ist the number of parameters in the model
         - L is teh maximized valued of the likelihood function of the model
 
-    
+    BIC is similar to another model selection criterion known as the Akaike information Criterion (AIC) but it imposes a higher penalty fro models with more parameters. This makes BIC more conservative compared to AIC in terms of favoring simpler models. BIC is widely used for its balance in addressing the trade-of between models fit and complexity.
 
 
 
+12. How to determine the correct number of clusters?
+
+    Determining the correct number of clustering in a dataset is a fundamental aspect of cluster analysis in ML, especially for algorithms like K-means where this number needs to be specified a priori. There's no one-size-fits-all answer, but several methods can guide this decision:
+
+    1. Elbow Method
+    2. Silhouette Score
+    3. Gap Statistic
+    4. Bayesian Information Criterion
+    5. Cross-Validation
+    6. Domain Knowledge
+    7. Heirarchical Clustering Dendrogram
+    8. Stability Approaches
+
+    Clustering is more of an art that a science, and different methods may suggest different number of clusters. It's often a good practice to try multiple methods and use domain knowledge to make the final decision.
 
 
-
-11. What is the Bayesian Information Criterion?
-    The Bayesian Information Criterion (BIC) is a criterion for model selection among for model selection among a fine set of models. It is based on the likelihood function and is used in various statistical models, including those in machine learning. The BIC is particularly used ful in clustering and other unsupervised learning scenario, such as selecting the number of clusters in K-means or the number of components in a Gaussian Mixture Model (GMM)
-
-
-
-12. How to determine the correct number of clusters
 13. What is Hierarchical clustering?
+    In this method, data is not partitioned into a particular cluster in a single step. Instead clusters are formed sequentially, either by merging smaller clusters into large ones (agglomerative approach) or by splitting large clusters into smaller ones (divisive approach).
+
+    In the agglomerative approach, each data point starts in it own cluster, and pairs of clusters are merged as one moves up the heirarchy. The results of heirarchical clustering are usually presented in a dendrogram
+
+    Key points:
+        1. No need to specify the number of clusters upfront.
+        2. Flexibility in defining cluster relationships
+        3. Ease of interpretation
+
 14. What is Agglomerative clustering?
+    Is a type of heirarchical clustering used in ML and Statistic.
+
 15. What is Ward’s method?
 16. What is Cophenetic distance?
 17. What is scikit-learn?
