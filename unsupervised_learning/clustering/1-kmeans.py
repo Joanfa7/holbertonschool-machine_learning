@@ -21,20 +21,30 @@ def kmeans(X, k, iterations=1000):
         return None, None
     if type(iterations) is not int or iterations <= 0:
         return None, None
+    # Get the number of data points and dimensions    
     n, d = X.shape
+    # Initialize the centroids using the initialize function
     C = initialize(X, k)
+    # Perform k-means clustering for maximum of iterations
     for i in range(iterations):
+        # Make a copy of the centroids
         C_copy = np.copy(C)
+        # Calculate the distance between eah data point and each centroid
         distances = np.linalg.norm(X - C[:, np.newaxis], axis=2)
+        # Assign each data point to the nearest centroid
         clss = np.argmin(distances, axis=0)
         for j in range(k):
+            # If a centroid has no data points assigned to it reinitialize
             if len(X[clss == j]) == 0:
                 C[j] = initialize(X, 1)[0]
             else:
                 C[j] = np.mean(X[clss == j], axis=0)
+
+        # Check if the centroids have converged
         distances = np.linalg.norm(C_copy - C, axis=1)
         if np.all(distances == 0):
             break
+    # Return the centroids and the cluster assignments
     return C, clss
 
 def initialize(X, k):
