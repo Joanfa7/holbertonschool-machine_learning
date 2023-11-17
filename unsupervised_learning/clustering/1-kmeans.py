@@ -11,7 +11,7 @@ def kmeans(X, k, iterations=1000):
             k: (int) containing the number of clusters.
             iterations: (int) containing the maximum number of iterations.
         Returns:
-            C: (numpy.ndarray) containing the centroid means each cluster.
+            C: (numpy.ndarray) containing the centroid means  each cluster.
             clss: (numpy.ndarray) containing the index of the cluster in C
                   that each data point belongs to.
     """
@@ -48,12 +48,12 @@ def kmeans(X, k, iterations=1000):
     return C, clss
 
 def initialize(X, k):
-    """ initializes cluster centroids K-means
+    """ initializes cluster centroids  K-means
         X: np.ndarray (n, d) dataset to cluster
           n: number of data points
           d: number of dimensions
         k: positive int, number of clusters
-        Returns: np.ndarray (k, d) initialized centroids each cluster,"""
+        Returns: np.ndarray (k, d) initialized centroids  each cluster,"""
     # Check if X is a numpy ndarray with 2 dimensions
     if not isinstance(X, np.ndarray) or len(X.shape) != 2:
         return None
@@ -71,5 +71,5 @@ def initialize(X, k):
 
     # Generate a numpy ndarray of random values between the minimum and
     # maximum values of X
-    centroids = np.random.unim(low, high, (k, d))
+    centroids = np.random.uniform(low, high, (k, d))
     return centroids
