@@ -24,7 +24,7 @@ def initialize(X, k):
     pi = np.full((k,), 1 / k)
     # Uses the kmeans function to initialize the m array with centroid
     # means  each cluster. Also obtains the clss array that represents
-    # the cluster assignments  each data point.
+    # the cluster assignments  each data point
     m, clss = kmeans(X, k)
     # Initializes the S array with shape (k, d, d), where d is the dimension
     S = np.tile(np.identity(X.shape[1]), (k, 1, 1))
