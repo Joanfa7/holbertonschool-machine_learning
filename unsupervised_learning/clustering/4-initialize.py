@@ -16,13 +16,13 @@ def initialize(X, k):
           m: np.ndarray (k, d) of centroid means  each cluster
           S: np.ndarray (k, d, d) of covariance matrices each cluster
     """
-    if type(X) is not np.ndarray or len(X.shape) != 2:
+    if not isinstance(X, np.ndarray) or len(X.shape) != 2:
         return None, None, None
-    if type(k) is not int or k <= 0 or X.shape[0] < k:
+    if not isinstance(k, int) or k <= 0 or X.shape[0] < k:
         return None, None, None
     # Initializes the pi array with values equal to 1/k  each cluster.
     pi = np.full((k,), 1 / k)
-    # Uses the kmeans function to initialize the m array with centroid 
+    # Uses the kmeans function to initialize the m array with centroid
     # means  each cluster. Also obtains the clss array that represents
     # the cluster assignments  each data point.
     m, clss = kmeans(X, k)
