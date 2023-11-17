@@ -12,7 +12,8 @@ def variance(X, C):
         C: numpy.ndarray, shape (k, d), representing the cluster centroids.
 
     Returns:
-        var: float, representing the variance of the dataset with respect to the cluster centroids.
+        var: float, representing the variance of 
+        the dataset with respect to the cluster centroids.
     """
     if not isinstance(X, np.ndarray) or not isinstance(C, np.ndarray):
         return None
