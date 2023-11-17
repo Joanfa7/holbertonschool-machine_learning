@@ -22,7 +22,7 @@ def initialize(X, k):
         return None, None, None
     # Initializes the pi array with values equal to 1/k  each cluster.
     pi = np.full((k,), 1 / k)
-    # Uses the kmeans function to initialize the m array with centroid
+    # Uses the kmeans function to initialize the m array with the centroid
     # means  each cluster. Also obtains the clss array that represents
     # the cluster assignments  each data point
     m, clss = kmeans(X, k)
