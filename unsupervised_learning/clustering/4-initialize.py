@@ -5,15 +5,15 @@ import numpy as np
 
 
 def initialize(X, k):
-    """ initializes variables for a Gaussian Mixture Model
+    """ initializes variables  a Gaussian Mixture Model
         X: np.ndarray (n, d) of data set
           n: number of data points
           d: number of dimensions
         k: positive int of number of clusters
         Returns: pi, m, S, or None, None, None on failure
-          pi: np.ndarray (k,) of priors for each cluster
-          m: np.ndarray (k, d) of centroid means for each cluster
-          S: np.ndarray (k, d, d) of covariance matrices for each cluster
+          pi: np.ndarray (k,) of priors  each cluster
+          m: np.ndarray (k, d) of centroid means  each cluster
+          S: np.ndarray (k, d, d) of covariance matrices each cluster
     """
     if not isinstance(X, np.ndarray) or len(X.shape) != 2:
         return None, None, None
@@ -21,7 +21,7 @@ def initialize(X, k):
         return None, None, None
     # Get the number of data points (n) and dimensions (d) from the shape of X
     n, d = X.shape
-    # Initialize the priors pi with equal probabilities for each cluster
+    # Initialize the priors pi with equal probabilities each cluster
     pi = np.full((k,), 1 / k)
     # Initialize the centroid means m with random values within the range of X
     # Initialize the centroid means m with random values within the range of X
