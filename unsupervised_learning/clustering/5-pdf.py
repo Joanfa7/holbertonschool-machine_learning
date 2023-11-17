@@ -24,7 +24,7 @@ def pdf(X, m, S):
     # Calculates the squared Mahalanobis distance between each data point and the mean vector.
     fac = np.einsum('...k,kl,...l->...', X-m, inv, X-m)
 
-    # Calculates the probability density function for each data point.
+    # Calculates the probability density function  each data point.
     pdf = np.exp(-fac / 2) / den
 
     # Sets a minimum value to avoid division by zero.
