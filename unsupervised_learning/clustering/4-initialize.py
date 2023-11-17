@@ -20,11 +20,11 @@ def initialize(X, k):
         return None, None, None
     if type(k) is not int or k <= 0 or X.shape[0] < k:
         return None, None, None
-    # Initializes the pi array with values equal to 1/k for each cluster.
+    # Initializes the pi array with values equal to 1/k  each cluster.
     pi = np.full((k,), 1 / k)
     # Uses the kmeans function to initialize the m array with centroid 
-    # means for each cluster. Also obtains the clss array that represents
-    # the cluster assignments for each data point.
+    # means  each cluster. Also obtains the clss array that represents
+    # the cluster assignments  each data point.
     m, clss = kmeans(X, k)
     # Initializes the S array with shape (k, d, d), where d is the dimension
     S = np.tile(np.identity(X.shape[1]), (k, 1, 1))
