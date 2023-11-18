@@ -12,11 +12,11 @@ def expectation(X, pi, m, S):
     -> pi is a numpy.ndarray of shape (k,) containing the priors  each cluster
     -> m is a numpy.ndarray of shape (k, d) containing the centroid means
         each cluster
-    -> S is a numpy.ndarray of shape (k, d, d) containing the covariance matrices
-        each cluster
+    -> S is a numpy.ndarray of shape (k, d, d) containing the covariance
+       matriceseach cluster
     -> Returns: g, l, or None, None on failure
-        * g is a numpy.ndarray of shape (k, n) containing the posterior probabilities
-             each data point in each cluster
+        * g is a numpy.ndarray of shape (k, n) containing the
+            posterior probabilities each data point in each cluster
         * l is the total log likelihood
     """
     if not isinstance(X, np.ndarray) or len(X.shape) != 2:
@@ -45,6 +45,6 @@ def expectation(X, pi, m, S):
         g[i] = pi[i] * P
     g = g / np.sum(g, axis=0)
     # Normalize the posterior probabilities g
-    l = np.sum(np.log(np.sum(g, axis=0)))
+    likelihood = np.sum(np.log(np.sum(g, axis=0)))
     # Calculate the total log likelihood l
-    return g, l
+    return g, likelihood
