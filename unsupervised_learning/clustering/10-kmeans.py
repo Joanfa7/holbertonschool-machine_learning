@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ K-means """
 
+
 import sklearn.cluster
 
 def kmeans(X, k):
@@ -11,7 +12,8 @@ def kmeans(X, k):
             - d: number of dimensions
         - k: positive int number of clusters
     Returns: C, clss
-        - C: np.ndarray shape(k, d) centroid means for each cluster
+        - C: np.ndarray shape(k, d) centroid means 
+        for each cluster
         - clss: np.ndarray shape(n,) index of cluster in C that each data point belongs to
     """
     kmeans = sklearn.cluster.KMeans(n_clusters=k).fit(X)
