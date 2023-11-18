@@ -4,17 +4,17 @@ import numpy as np
 pdf = __import__('5-pdf').pdf
 
 def expectation(X, pi, m, S):
-    """calculates the expectation step in the EM algorithm for a GMM:
+    """calculates the expectation step in the EM algorith a GMM:
 
     -> X is a numpy.ndarray of shape (n, d) containing the data set
-    -> pi is a numpy.ndarray of shape (k,) containing the priors for each cluster
+    -> pi is a numpy.ndarray of shape (k,) containing the priors  each cluster
     -> m is a numpy.ndarray of shape (k, d) containing the centroid means
-       for each cluster
+        each cluster
     -> S is a numpy.ndarray of shape (k, d, d) containing the covariance matrices
-       for each cluster
+        each cluster
     -> Returns: g, l, or None, None on failure
         * g is a numpy.ndarray of shape (k, n) containing the posterior probabilities
-            for each data point in each cluster
+             each data point in each cluster
         * l is the total log likelihood
     """
     if type(X) is not np.ndarray or len(X.shape) != 2:
@@ -39,7 +39,7 @@ def expectation(X, pi, m, S):
     g = np.zeros((k, n))
     for i in range(k):
         P = pdf(X, m[i], S[i])
-        # Calculate the probability density function P for each cluster
+        # Calculate the probability density function P  each cluster
         g[i] = pi[i] * P
     g = g / np.sum(g, axis=0)
     # Normalize the posterior probabilities g
