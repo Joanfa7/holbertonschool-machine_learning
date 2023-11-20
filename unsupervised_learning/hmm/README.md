@@ -7,7 +7,7 @@
     The Markov property, also known as the "memoryless property", is a fundamental concept in probability theory and forms the basis of Markov Models, including Hidden Markov Models.
 
     Definition:
-            The Markov property states that the future stat of a process depends only on the current state and not on the sequence of events that preceded it. In other words, it has no "memory" of the past.
+        The Markov property states that the future stat of a process depends only on the current state and not on the sequence of events that preceded it. In other words, it has no "memory" of the past.
 
 2. What is a Markov chain?
 3. What is a state?
