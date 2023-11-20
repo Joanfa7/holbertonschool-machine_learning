@@ -2,7 +2,7 @@
 
 ## Learning Objectives
 
-1. What is the Markov property?
+1. What is the Markov property?\ 
         The Markov property, also known as the "memoryless property", is a fundamental concept in probability theory and forms the basis of Markov Models, including Hidden Markov Models.
 
         Definition:
