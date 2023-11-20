@@ -45,8 +45,11 @@
     Absorbing states in a Markov chain is a state that, once entered, cannot be left. In other words, once the process reaches an absorbing state, it remains there indefinitely.
 
     Characteristics:
+
         1. No Exit
+
         2. Self-loop Probability
+        
         3. Permanent State
 
 9. What is a transient state?
@@ -54,8 +57,11 @@
     Transient state are an integral part of the structure of Markov chains and are key to understanding the dynamics of stochastic process. The  represent temporary phases through which the process passes before potentially reaching more stable, recurrent states. Identifying and analyzing these states can provide significant insights about the behavior and future evaluation of complex stems modeled by Markov chains.
 
     Characteristics:
+
         1. Non-Permanent
+
         2. Finite Number of Visits
+
         3. Probability of Exit
 
 10. What is a recurrent state?
@@ -63,8 +69,11 @@
     A recurrent state in Markov chain is a state that, once visited, has a probability of one of being visited again infinitely often. This is in contrast to a transient state, where the probability of returning to the state infinitely often is less than one.
 
     Characteristics:
+
         1. Repeated Visits
+
         2. Probability of Return
+
         3. Long-Term Behavior
 
 11. What is an absorbing Markov chain?
@@ -72,8 +81,11 @@
     An Absorbing Markov chain is a special type of Chain that contains at least one absorbing state. An absorbing state, as previously mentioned, is one that once entered, cannot be left. The presence of such a state in Markov chain has a significant implications for the behavior of the chain over time.
 
     Characteristics:
+
         1. Presence of Absorbing States
+
         2. Possibility of Absorption
+
         3. Long-Term Behavior
 
 12. What is a Hidden Markov Model?
@@ -103,8 +115,11 @@
     Is a fundamental procedure used in HMM to compute the probability of observing a particular sequence of observation given the model parameters. It's essential for many tasks involving HMMs, such as evaluating model fit and predicting state sequences.
 
     Key Steps:
+
         1. Initialization
+
         2. Recursion
+
         3. Termination
 
 18. What is decoding?
