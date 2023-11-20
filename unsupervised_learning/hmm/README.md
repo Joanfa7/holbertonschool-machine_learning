@@ -126,6 +126,7 @@
     The Forward-Backward algorithm is a fundamental technique used with HMM to compute the posterior probabilities of the hidden states given a sequence of observations. It combines two procedures: the Forward algorithm, which computes the probability of the sequence up to a certain point, and the Backward algorithm, which computes the probability from a certain point to the end of the sequence.
 
     Overview:
+
         1. Forward Pass: Calculates teh probability of each state at each time step, given the observed sequence up to that point.
 
         2. Backward Pass: Calculates the probability of the observed sequence from a certain point in time the end, given each state.
