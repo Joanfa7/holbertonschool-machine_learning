@@ -116,9 +116,13 @@
     The Viterbi algorithm is a dynamic programming algorithm used in HMM to find the most probable sequence of hidden states (also known as the Viterbi path) given a sequence of observations. This is particularly usual in applications like speech recognition, where we want to know the most likely sequence of words (hidden states) that produced a given sequence of sounds (observations)
 
     Key Steps:
+
         1. Initialization
+
         2. Iteration
+
         3. Termination
+        
         4. Path Tracing
 
 20. What is the Forward-Backward algorithm and how do you implement it?
