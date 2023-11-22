@@ -11,7 +11,7 @@ def regular(P):
           n: number of states in the markov chain
           Returns: np.ndarray (1, n) containing the steady state probabilities,
         """
-    if type(P) is not np.ndarray or len(P.shape) != 2:
+    if not isinstance(P, np.ndarray) or len(P.shape) != 2:
         return None
     n, n1 = P.shape
     if n != n1:
@@ -29,6 +29,3 @@ def regular(P):
 
     # Returns the stationary state of P
     return evecs.T
-
-
-
