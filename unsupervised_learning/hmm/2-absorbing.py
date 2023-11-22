@@ -20,8 +20,8 @@ def absorbing(P):
         return False
 
     # Check if non-absorbing states can reach absorbing states
-    non_absorbing_indives = np.where(is_absorbing == False)[0]
-    if non_absorbing_indives.size == 0:
+    non_absorbing_indives = np.where(is_absorbing is False)[0]
+    if non_absorbing_indives.size is 0:
         return True
 
     Q = P[non_absorbing_indives, :][:, non_absorbing_indives]
