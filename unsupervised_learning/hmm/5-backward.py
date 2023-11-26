@@ -16,14 +16,14 @@ def backward(Observation, Emission, Transition, Initial):
         N: number of hidden states
         M: number of all possible observations
     """
-    if not isinstance(Observation, np.ndarray) or len(Observation) == 0:
-        return None, None
-    if not isinstance(Emission, np.ndarray) or len(Emission) != 2:
-        return None, None
-    if not isinstance(Transition, np.ndarray) or len(Transition) != 2:
-        return None, None
-    if not isinstance(Initial, np.ndarray) or len(Initial) != 2:
-        return None, None
+    # if not isinstance(Observation, np.ndarray) or len(Observation) == 0:
+    #     return None, None
+    # if not isinstance(Emission, np.ndarray) or len(Emission) != 2:
+    #     return None, None
+    # if not isinstance(Transition, np.ndarray) or len(Transition) != 2:
+    #     return None, None
+    # if not isinstance(Initial, np.ndarray) or len(Initial) != 2:
+    #     return None, None
 
     N, M = Emission.shape
     T = Observation.shape[0]
@@ -33,9 +33,9 @@ def backward(Observation, Emission, Transition, Initial):
 
     for t in range(T - 2, -1, -1):
         for n in range(N):
-            beta[n, t] = np.sum(Transition[n, :], * Emission[:, Observation[t + 1]] * beta[:, t + 1])
+            beta[n, t] = np.sum(Transition[n, :],
+                                * Emission[:, Observation[t + 1]]
+                                * beta[:, t + 1])
 
     P = np.sum(Initial[:, 0] * Emission[:, Observation[0]] * beta[:, 0])
     return P, beta
-
- 
