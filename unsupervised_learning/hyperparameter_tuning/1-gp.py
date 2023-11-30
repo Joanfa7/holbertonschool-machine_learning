@@ -29,22 +29,14 @@ class GaussianProcess:
     def predict(self, X_s):
         """ predicts the mean and standard deviation of points
             in a Gaussian process """
-        X_s = np.array(X_s)
-        print(f"X_s.shape: {X_s.shape}")
-        K = self.K
-        print(f"K.shape: {K.shape}")
-        K_s = self.kernel(self.X, X_s)
-        print(f"K_s.shape: {K_s.shape}")
-        K_ss = self.kernel(X_s, X_s)
-        print(f"K_ss.shape: {K_ss.shape}")
-        K_inv = np.linalg.inv(K)
-        print(f"K_inv.shape: {K_inv.shape}")
 
-        mu_s = K_s.T.dot(K_inv).dot(self.Y).reshape(-1)
-        print(f"mu_s.shape: {mu_s.shape}")
+        K_s = self.kernel(self.X, X_s)
+        K_ss = self.kernel(X_s, X_s)
+        K_inv = np.linalg.inv(self.K)
+
+        mu_s = K_s.T.dot(K_inv).dot(self.Y)
+        mu_s = np.reshape(mu_s, -1)
         sigma = K_ss - K_s.T.dot(K_inv).dot(K_s)
-        print(f"sigma.shape: {sigma.shape}")
-        sigma = np.diag(sigma)
-        print(f"sigma.shape: {sigma.shape}")
+        sigma = np.diagonal(sigma)
 
         return mu_s, sigma
