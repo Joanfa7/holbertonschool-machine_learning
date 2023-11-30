@@ -7,11 +7,11 @@ import numpy as np
 class GaussianProcess:
     """ Gaussian Process """
 
-    def __init__(self, X_init, Y_init, samples=1, sigma_f=1):
+    def __init__(self, X_init, Y_init, l=1, sigma_f=1):
         """ Constructor """
         self.X = X_init
         self.Y = Y_init
-        self.samples = samples
+        self.l = l
         self.sigma_f = sigma_f
         self.K = self.kernel(X_init, X_init)
 
