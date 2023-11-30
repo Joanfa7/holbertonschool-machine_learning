@@ -98,7 +98,16 @@
             2. Exploitation: Sampling in regions where the model predicts high performance, based on existing data.
 
 10. What is Knowledge Gradient?
+
+        Expected Improvement (EI) is one of the most popular acquisition function used in Bayesian Optimization, a method for optimizing objective functions that are expensive or difficult to evaluate. EI provides a balance between exploring new areas and exploiting known good areas in the search space
+
 11. What is Entropy Search/Predictive Entropy Search?
+
+        Entropy Search and Prediction Entropy Search are advance acquisition function used in Bayesian Optimization, focusing on reducing the uncertainty about the objective function's global maximum. They are particularly effective in situations where it's crucial to gain information about where the best possible outcome might be, even if the immediate next sample might not provide the best possible result.
 12. What is GPy?
+        Is an open-source Python library for Gaussian Process modeling. It's developed primarily by the ML group at the University of Sheffield and is widely used iin both academic and industry settings for implementing Gaussian Processes.
+
 13. What is GPyOpt?
+
+        GPyOpt is an open-source Python library that extends the capabilities of the GPy library to handle Bayesian Optimization. While GPy focuses on Gaussian Processes (GPs), GPyOpt leverages these processes for the specific task of optimization, particularly useful for optimizing complex functions that are expensive to evaluate. It's widely used in hyperparameter tuning for machine learning models and other applications where traditional optimization methods may not be effective.ß
 
