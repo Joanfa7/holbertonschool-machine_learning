@@ -20,9 +20,9 @@ class GaussianProcess:
         X1 = np.array(X1)
         X2 = np.array(X2)
 
-        dist = np.sum(X1 ** 2, 1).reshape(-1, 1) +\
-            np.sum(X2 ** 2, 1) - 2 * np.dot(X1, X2.T)
+        dist = np.sum(X1 ** 2, 1).reshape(-1, 1) + np.sum(X2 ** 2, 1)\
+            - (2 * np.dot(X1, X2.T))
 
         sigma = 1.0
 
-        return np.exp(-dist / (2 * sigma ** 2))
+        return self.sigma_f ** 2 * np.exp(-0.5 / self.l ** 2 * dist)
