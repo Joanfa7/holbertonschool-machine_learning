@@ -16,13 +16,17 @@ def markov_chain(P, s, t=1):
           after t iterations, or None on failure
     """
     if type(P) is not np.ndarray or len(P.shape) != 2:
+        print("P is not a valid transition matrix")
         return None
     n, n2 = P.shape
     if n != n2:
+        print("P is not a valid transition matrix")
         return None
     if type(s) is not np.ndarray or len(s.shape) != 2:
+        print("s is not a valid vector")
         return None
     if type(t) is not int or t < 1:
+        print("t must be a positive integer")
         return None
     # Calculate the t-th power of matrix P
     Pk = np.linalg.matrix_power(P, t)
