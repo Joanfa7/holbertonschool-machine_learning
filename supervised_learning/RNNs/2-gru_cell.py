@@ -3,7 +3,7 @@
 import numpy as np
 
 
-class RNNCell:
+class GRUCell:
     """ Represent a cell of a simple RNN """
     def __init__(self, i, h, o):
         """
@@ -14,8 +14,12 @@ class RNNCell:
             o: is the dimensionality of the outputs
         """
         # Weights
+        self.Wz = np.random.normal(size=(i+h, h))
+        self.Wr = np.random.normal(size=(i+h, h))
         self.Wh = np.random.normal(size=(i+h, h))
         self.Wy = np.random.normal(size=(h, o))
+        self.bz = np.zeros((1, h))
+        self.br = np.zeros((1, h))
         self.bh = np.zeros((1, h))
         self.by = np.zeros((1, o))
 
