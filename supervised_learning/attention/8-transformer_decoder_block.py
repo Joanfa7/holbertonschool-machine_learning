@@ -23,14 +23,15 @@ class DecoderBlock(tf.keras.layers.Layer):
         self.dropout2 = tf.keras.layers.Dropout(drop_rate)
         self.dropout3 = tf.keras.layers.Dropout(drop_rate)
 
-        def call (self, x, encoder_output, training, look_ahead_mask, padding_mask):
+        def call(self, x, encoder_output, training,
+                 look_ahead_mask, padding_mask):
             ''' call method '''
             attention, attention_block = self.mha1(x, x, x, look_ahead_mask)
             attention = self.dropout1(attention, training=training)
             out1 = self.layernorm1(attention + x)
             attention2, attention_block2 = self.mha2(out1, encoder_output,
-                                                        encoder_output,
-                                                        padding_mask)
+                                                     encoder_output,
+                                                     padding_mask)
             attention2 = self.dropout2(attention2, training=training)
             out2 = self.layernorm2(attention2 + out1)
             hidden_output = self.dense_hidden(out2)
