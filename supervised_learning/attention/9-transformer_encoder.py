@@ -3,7 +3,7 @@
 
 import tensorflow as tf
 positional_encoding = __import__('4-positional_encoding').positional_encoding
-EnoderBlock = __import__('7-transformer_encoder_block').EncoderBlock
+DecoderBlock = __import__('8-transformer_decoder_block').DecoderBlock
 
 
 class Encoder(tf.keras.layers.Layer):
@@ -16,7 +16,7 @@ class Encoder(tf.keras.layers.Layer):
         self.N = N
         self.embedding = tf.keras.layers.Embedding(input_vocab, dm)
         self.positional_encoding = positional_encoding(max_seq_len, dm)
-        self.blocks = [EnoderBlock(dm, h, hidden, drop_rate)
+        self.blocks = [DecoderBlock(dm, h, hidden, drop_rate)
                        for _ in range(N)]
         self.dropout = tf.keras.layers.Dropout(drop_rate)
 
@@ -30,4 +30,3 @@ class Encoder(tf.keras.layers.Layer):
         for i in range(self.N):
             encoder_out = self.blocks[i](output, training, mask)
         return encoder_out
-    
