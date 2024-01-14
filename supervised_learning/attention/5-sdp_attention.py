@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/env 
+'''Scaled Dot Product Attention'''
 
 import tensorflow as tf
 
