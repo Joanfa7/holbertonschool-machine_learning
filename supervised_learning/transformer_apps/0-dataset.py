@@ -20,10 +20,20 @@ class Dataset():
         
     def tokenize_dataset(self, data):
         ''' creates sub-word tokenizers for our dataset '''
-        tokenizer_pt = tfds.deprecated.text.SubwordTextEncoder.build_from_corpus(
-            (pt.numpy() for pt, en in self.data_train),
-            target_vocab_size=2**15)
-        tokenizer_en = tfds.deprecated.text.SubwordTextEncoder.build_from_corpus(
-            (en.numpy() for pt, en in self.data_train),
-            target_vocab_size=2**15)
+
+        SubwordTextEncoder = tfds.deprecated.text.SubwordTextEncoder
+        tokenizer_pt = SubwordTextEncoder.build_from_corpus(
+            (pt.numpy() for pt, en in data), target_vocab_size=2**15)
+        tokenizer_en = SubwordTextEncoder.build_from_corpus(
+            (en.numpy() for pt, en in data), target_vocab_size=2**15)
         return tokenizer_pt, tokenizer_en
+
+dataset = Dataset()
+
+# Check the shapes and types of the data in data_train
+for pt, en in dataset.data_train.take(1):
+    print("Portuguese data shape:", pt.shape)
+    print("Portuguese data type:", pt.dtype)
+    print("English data shape:", en.shape)
+    print("English data type:", en.dtype)
+    print()
