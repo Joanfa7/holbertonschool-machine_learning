@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-''' Module for creating masks to be used in the transformer '''
+''' bag of words embedding'''
 from sklearn.feature_extraction.text import CountVectorizer
 
 
