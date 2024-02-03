@@ -5,10 +5,12 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 def bag_of_words(sentences, vocab=None):
     ''' creates a bag of words embedding matrix '''
-    vectorizer = CountVectorizer(max_features=sentences)
-    X = vectorizer.fit_transform(sentences)
     if vocab is None:
-        vocab = []
-    embeddings = vectorizer.fit_transform(sentences).toarray()
-    vocab = list(vectorizer.get_feature_names())
+        vectorizer = CountVectorizer()
+        X = vectorizer.fit_transform(sentences)
+        vocab = vectorizer.get_feature_names_out()
+    else:
+        vectorizer = CountVectorizer(vocabulary=vocab)
+        X = vectorizer.fit_transform(sentences)
+    embeddings = X.toarray()
     return embeddings, vocab
