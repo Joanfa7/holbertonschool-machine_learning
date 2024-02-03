@@ -9,5 +9,5 @@ def pca(X, var=0.95):
     cum = np.cumsum(Sigma) / np.sum(Sigma)
     r = (np.argwhere(cum >= var))[0, 0]
     w = vh.T
-    wr = w[:, :r +1]
+    wr = w[:, :r + 1]
     return wr
